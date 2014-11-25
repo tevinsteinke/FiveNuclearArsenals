@@ -1,0 +1,83 @@
+<h1>Listing simulations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blueinventory</th>
+      <th>Redinventory</th>
+      <th>Icbmmax</th>
+      <th>Icbmmirv</th>
+      <th>Icbmprob</th>
+      <th>Icbmavail</th>
+      <th>Icbmbluelaunch</th>
+      <th>Icbmbluepk</th>
+      <th>Subsoperational</th>
+      <th>Subsatsea</th>
+      <th>Subsroundup</th>
+      <th>Subsweaps</th>
+      <th>Subsplusicbms</th>
+      <th>Subsplusbombs</th>
+      <th>Substubes</th>
+      <th>Subsmirv</th>
+      <th>Subsnavy</th>
+      <th>Bombsnumber</th>
+      <th>Bombssurvive</th>
+      <th>Bombspoststrike</th>
+      <th>Redratio</th>
+      <th>Redtarget</th>
+      <th>Redpk</th>
+      <th>Redbases</th>
+      <th>Redblueicbms</th>
+      <th>Redfirststrike</th>
+      <th>Redsurviving</th>
+      <th>Bluesurviving</th>
+      <th>Deltasurviving</th>
+      <th>Ratiosurviving</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @simulations.each do |simulation| %>
+      <tr>
+        <td><%= simulation.blueInventory %></td>
+        <td><%= simulation.redInventory %></td>
+        <td><%= simulation.icbmMax %></td>
+        <td><%= simulation.icbmMirv %></td>
+        <td><%= simulation.icbmProb %></td>
+        <td><%= simulation.icbmAvail %></td>
+        <td><%= simulation.icbmBlueLaunch %></td>
+        <td><%= simulation.icbmBluePk %></td>
+        <td><%= simulation.subsOperational %></td>
+        <td><%= simulation.subsAtSea %></td>
+        <td><%= simulation.subsRoundUp %></td>
+        <td><%= simulation.subsWeaps %></td>
+        <td><%= simulation.subsPlusIcbms %></td>
+        <td><%= simulation.subsPlusBombs %></td>
+        <td><%= simulation.subsTubes %></td>
+        <td><%= simulation.subsMirv %></td>
+        <td><%= simulation.subsNavy %></td>
+        <td><%= simulation.bombsNumber %></td>
+        <td><%= simulation.bombsSurvive %></td>
+        <td><%= simulation.bombsPostStrike %></td>
+        <td><%= simulation.redRatio %></td>
+        <td><%= simulation.redTarget %></td>
+        <td><%= simulation.redPk %></td>
+        <td><%= simulation.redBases %></td>
+        <td><%= simulation.redBlueIcbms %></td>
+        <td><%= simulation.redFirstStrike %></td>
+        <td><%= simulation.redSurviving %></td>
+        <td><%= simulation.blueSurviving %></td>
+        <td><%= simulation.deltaSurviving %></td>
+        <td><%= simulation.ratioSurviving %></td>
+        <td><%= link_to 'Show', simulation %></td>
+        <td><%= link_to 'Edit', edit_simulation_path(simulation) %></td>
+        <td><%= link_to 'Destroy', simulation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Simulation', new_simulation_path %>

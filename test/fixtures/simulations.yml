@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blueInventory: 1
+  redInventory: 1
+  icbmMax: 1
+  icbmMirv: 1.5
+  icbmProb: 9.99
+  icbmAvail: 1
+  icbmBlueLaunch: false
+  icbmBluePk: 9.99
+  subsOperational: 1
+  subsAtSea: 9.99
+  subsRoundUp: false
+  subsWeaps: 1
+  subsPlusIcbms: 1
+  subsPlusBombs: 1
+  subsTubes: 1
+  subsMirv: 1.5
+  subsNavy: 1
+  bombsNumber: 1
+  bombsSurvive: false
+  bombsPostStrike: 1
+  redRatio: 1
+  redTarget: false
+  redPk: 9.99
+  redBases: 1
+  redBlueIcbms: 1
+  redFirstStrike: 1
+  redSurviving: 1
+  blueSurviving: 1
+  deltaSurviving: 1
+  ratioSurviving: 1.5
+
+two:
+  blueInventory: 1
+  redInventory: 1
+  icbmMax: 1
+  icbmMirv: 1.5
+  icbmProb: 9.99
+  icbmAvail: 1
+  icbmBlueLaunch: false
+  icbmBluePk: 9.99
+  subsOperational: 1
+  subsAtSea: 9.99
+  subsRoundUp: false
+  subsWeaps: 1
+  subsPlusIcbms: 1
+  subsPlusBombs: 1
+  subsTubes: 1
+  subsMirv: 1.5
+  subsNavy: 1
+  bombsNumber: 1
+  bombsSurvive: false
+  bombsPostStrike: 1
+  redRatio: 1
+  redTarget: false
+  redPk: 9.99
+  redBases: 1
+  redBlueIcbms: 1
+  redFirstStrike: 1
+  redSurviving: 1
+  blueSurviving: 1
+  deltaSurviving: 1
+  ratioSurviving: 1.5
