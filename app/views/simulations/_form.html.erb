@@ -1,6 +1,7 @@
 <%= form_for(@simulation) do |f| %>
   <% if @simulation.errors.any? %>
-    <div id="error_explanation">
+  <div class="row">
+    <div id="error_explanation" class="col-sm-12">
       <h2><%= pluralize(@simulation.errors.count, "error") %> prohibited this simulation from being saved:</h2>
 
       <ul>
@@ -9,129 +10,140 @@
       <% end %>
       </ul>
     </div>
+  </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :blueInventory %><br>
-    <%= f.number_field :blueInventory %>
+  <h2>Pre-Exchange Inventories</h2>
+  <div class="form-group col-md-6">
+    <%= f.label :blueInventory, "Blue force", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.number_field :blueInventory, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :redInventory %><br>
-    <%= f.number_field :redInventory %>
+  <div class="form-group col-md-6">
+    <%= f.label :redInventory, "Red force", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.number_field :redInventory, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :icbmMax %><br>
-    <%= f.number_field :icbmMax %>
-  </div>
-  <div class="field">
-    <%= f.label :icbmMirv %><br>
-    <%= f.text_field :icbmMirv %>
-  </div>
-  <div class="field">
-    <%= f.label :icbmProb %><br>
-    <%= f.text_field :icbmProb %>
-  </div>
-  <div class="field">
-    <%= f.label :icbmAvail %><br>
-    <%= f.number_field :icbmAvail %>
-  </div>
-  <div class="field">
-    <%= f.label :icbmBlueLaunch %><br>
-    <%= f.check_box :icbmBlueLaunch %>
-  </div>
-  <div class="field">
-    <%= f.label :icbmBluePk %><br>
-    <%= f.text_field :icbmBluePk %>
-  </div>
-  <div class="field">
-    <%= f.label :subsOperational %><br>
-    <%= f.number_field :subsOperational %>
-  </div>
-  <div class="field">
-    <%= f.label :subsAtSea %><br>
-    <%= f.text_field :subsAtSea %>
-  </div>
-  <div class="field">
-    <%= f.label :subsRoundUp %><br>
-    <%= f.check_box :subsRoundUp %>
-  </div>
-  <div class="field">
-    <%= f.label :subsWeaps %><br>
-    <%= f.number_field :subsWeaps %>
-  </div>
-  <div class="field">
-    <%= f.label :subsPlusIcbms %><br>
-    <%= f.number_field :subsPlusIcbms %>
-  </div>
-  <div class="field">
-    <%= f.label :subsPlusBombs %><br>
-    <%= f.number_field :subsPlusBombs %>
-  </div>
-  <div class="field">
-    <%= f.label :subsTubes %><br>
-    <%= f.number_field :subsTubes %>
-  </div>
-  <div class="field">
-    <%= f.label :subsMirv %><br>
-    <%= f.text_field :subsMirv %>
-  </div>
-  <div class="field">
-    <%= f.label :subsNavy %><br>
-    <%= f.number_field :subsNavy %>
-  </div>
-  <div class="field">
-    <%= f.label :bombsNumber %><br>
-    <%= f.number_field :bombsNumber %>
-  </div>
-  <div class="field">
-    <%= f.label :bombsSurvive %><br>
-    <%= f.check_box :bombsSurvive %>
-  </div>
-  <div class="field">
-    <%= f.label :bombsPostStrike %><br>
-    <%= f.number_field :bombsPostStrike %>
-  </div>
-  <div class="field">
-    <%= f.label :redRatio %><br>
-    <%= f.number_field :redRatio %>
-  </div>
-  <div class="field">
-    <%= f.label :redTarget %><br>
-    <%= f.check_box :redTarget %>
-  </div>
-  <div class="field">
-    <%= f.label :redPk %><br>
-    <%= f.text_field :redPk %>
-  </div>
-  <div class="field">
-    <%= f.label :redBases %><br>
-    <%= f.number_field :redBases %>
-  </div>
-  <div class="field">
-    <%= f.label :redBlueIcbms %><br>
-    <%= f.number_field :redBlueIcbms %>
-  </div>
-  <div class="field">
-    <%= f.label :redFirstStrike %><br>
-    <%= f.number_field :redFirstStrike %>
-  </div>
-  <div class="field">
-    <%= f.label :redSurviving %><br>
-    <%= f.number_field :redSurviving %>
-  </div>
-  <div class="field">
-    <%= f.label :blueSurviving %><br>
-    <%= f.number_field :blueSurviving %>
-  </div>
-  <div class="field">
-    <%= f.label :deltaSurviving %><br>
-    <%= f.number_field :deltaSurviving %>
-  </div>
-  <div class="field">
-    <%= f.label :ratioSurviving %><br>
-    <%= f.text_field :ratioSurviving %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="col-md-6">
+    <h2>Blue Force ICBMS</h2>
+    <div class="form-group">
+      <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
+      <%= f.number_field :icbmMax, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :icbmMirv, "MIRV ratio on ICBMs", :class => "control-label" %>
+      <%= f.text_field :icbmMirv, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :icbmProb, "Probability of ICBM launch prior to red first strike", :class => "control-label" %>
+      <%= f.text_field :icbmProb, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :icbmAvail, "ICBMs available prior to red first strike", :class => "control-label" %><br>
+      <%= f.number_field :icbmAvail, :class => "form-control derived-value" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :icbmBlueLaunch, "Blue launch under attack", :class => "control-label" %>
+      <%= f.check_box :icbmBlueLaunch, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :icbmBluePk, "Blue pk against red targets", :class => "control-label" %>
+      <%= f.text_field :icbmBluePk, :class => "form-control" %>
+    </div>
+    <h2>Blue force subs</h2>
+    <div class="field">
+      <%= f.label :subsOperational %><br>
+      <%= f.number_field :subsOperational %>
+    </div>
+    <div class="field">
+      <%= f.label :subsAtSea %><br>
+      <%= f.text_field :subsAtSea %>
+    </div>
+    <div class="field">
+      <%= f.label :subsRoundUp %><br>
+      <%= f.check_box :subsRoundUp %>
+    </div>
+    <div class="field">
+      <%= f.label :subsWeaps %><br>
+      <%= f.number_field :subsWeaps %>
+    </div>
+    <div class="field">
+      <%= f.label :subsPlusIcbms %><br>
+      <%= f.number_field :subsPlusIcbms %>
+    </div>
+    <div class="field">
+      <%= f.label :subsPlusBombs %><br>
+      <%= f.number_field :subsPlusBombs %>
+    </div>
+    <div class="field">
+      <%= f.label :subsTubes %><br>
+      <%= f.number_field :subsTubes %>
+    </div>
+    <div class="field">
+      <%= f.label :subsMirv %><br>
+      <%= f.text_field :subsMirv %>
+    </div>
+    <div class="field">
+      <%= f.label :subsNavy %><br>
+      <%= f.number_field :subsNavy %>
+    </div>
+  </div><!--/.col-md-6-->
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label :bombsNumber %><br>
+      <%= f.number_field :bombsNumber %>
+    </div>
+    <div class="field">
+      <%= f.label :bombsSurvive %><br>
+      <%= f.check_box :bombsSurvive %>
+    </div>
+    <div class="field">
+      <%= f.label :bombsPostStrike %><br>
+      <%= f.number_field :bombsPostStrike %>
+    </div>
+    <div class="field">
+      <%= f.label :redRatio %><br>
+      <%= f.number_field :redRatio %>
+    </div>
+    <div class="field">
+      <%= f.label :redTarget %><br>
+      <%= f.check_box :redTarget %>
+    </div>
+    <div class="field">
+      <%= f.label :redPk %><br>
+      <%= f.text_field :redPk %>
+    </div>
+    <div class="field">
+      <%= f.label :redBases %><br>
+      <%= f.number_field :redBases %>
+    </div>
+    <div class="field">
+      <%= f.label :redBlueIcbms %><br>
+      <%= f.number_field :redBlueIcbms %>
+    </div>
+    <div class="field">
+      <%= f.label :redFirstStrike %><br>
+      <%= f.number_field :redFirstStrike %>
+    </div>
+    <div class="field">
+      <%= f.label :redSurviving %><br>
+      <%= f.number_field :redSurviving %>
+    </div>
+    <div class="field">
+      <%= f.label :blueSurviving %><br>
+      <%= f.number_field :blueSurviving %>
+    </div>
+    <div class="field">
+      <%= f.label :deltaSurviving %><br>
+      <%= f.number_field :deltaSurviving %>
+    </div>
+    <div class="field">
+      <%= f.label :ratioSurviving %><br>
+      <%= f.text_field :ratioSurviving %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div><!--/.col-lg-6-->
 <% end %>

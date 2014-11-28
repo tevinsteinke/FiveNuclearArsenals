@@ -1,0 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$BLACK: #000;
+
+.derived-value {
+  background-color: lighten($BLACK, 80%);
+}
