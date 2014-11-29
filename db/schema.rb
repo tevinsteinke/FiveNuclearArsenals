@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125222820) do
+ActiveRecord::Schema.define(version: 20141129191227) do
 
   create_table "simulations", force: true do |t|
     t.integer  "blueInventory"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20141125222820) do
     t.float    "ratioSurviving"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "subsSeaRate"
   end
 
 end
