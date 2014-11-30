@@ -1,3 +1,25 @@
 <h1>Home page</h1>
 <p>confirm that you are over 18.</p>
-<%= link_to "I am over 18", new_simulation_path %>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  I am over 18
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Consent form</h4>
+      </div>
+      <div class="modal-body">
+        The consent form will appear here.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= link_to "Acknowledge", new_simulation_path %>
+      </div>
+    </div>
+  </div>
+</div>

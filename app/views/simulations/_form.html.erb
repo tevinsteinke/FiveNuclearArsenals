@@ -3,7 +3,6 @@
   <div class="row">
     <div id="error_explanation" class="col-sm-12">
       <h2><%= pluralize(@simulation.errors.count, "error") %> prohibited this simulation from being saved:</h2>
-
       <ul>
       <% @simulation.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -16,28 +15,28 @@
   <div class="form-group col-md-6">
     <%= f.label :blueInventory, "Blue force", :class => "col-sm-3 control-label" %>
     <div class="col-sm-9">
-      <%= f.number_field :blueInventory, :class => "form-control" %>
+      <%= f.number_field :blueInventory, :class => "form-control", :required => true %>
     </div>
   </div>
   <div class="form-group col-md-6">
     <%= f.label :redInventory, "Red force", :class => "col-sm-3 control-label" %>
     <div class="col-sm-9">
-      <%= f.number_field :redInventory, :class => "form-control" %>
+      <%= f.number_field :redInventory, :class => "form-control", :required => true %>
     </div>
   </div>
   <div class="col-md-6">
     <h2>Blue Force ICBMS</h2>
     <div class="form-group">
       <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
-      <%= f.number_field :icbmMax, :class => "form-control" %>
+      <%= f.number_field :icbmMax, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :icbmMirv, "MIRV ratio on ICBMs", :class => "control-label" %>
-      <%= f.text_field :icbmMirv, :class => "form-control" %>
+      <%= f.text_field :icbmMirv, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :icbmProb, "Probability of ICBM launch prior to red first strike", :class => "control-label" %>
-      <%= f.text_field :icbmProb, :class => "form-control" %>
+      <%= f.text_field :icbmProb, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :icbmAvail, "ICBMs available prior to red first strike", :class => "control-label" %><br>
@@ -54,15 +53,15 @@
     <h2>Blue force subs</h2>
     <div class="form-group">
       <%= f.label :subsOperational, "Number of operational blue subs", :class => "control-label" %>
-      <%= f.number_field :subsOperational, :class => "form-control" %>
+      <%= f.number_field :subsOperational, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :subsSeaRate, "\"At sea rate\" for blue subs", :class => "control-label" %>
-      <%= f.text_field :subsSeaRate, :class => "form-control" %>
+      <%= f.text_field :subsSeaRate, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :subsAtSea, "Number of subs at sea", :class => "control-label" %>
-      <%= f.text_field :subsAtSea, :class => "form-control" %>
+      <%= f.text_field :subsAtSea, :class => "form-control derived-value" %>
     </div>
     <div class="form-group">
       <%= f.label :subsRoundUp, "Round up to nearest whole sub", :class => "control-label" %>
@@ -70,34 +69,34 @@
     </div>
     <div class="form-group">
       <%= f.label :subsWeaps, "Weapons at sea", :class => "control-label" %>
-      <%= f.number_field :subsWeaps, :class => "form-control" %>
+      <%= f.number_field :subsWeaps, :class => "form-control derived-value" %>
     </div>
     <div class="form-group">
       <%= f.label :subsPlusIcbms, "Plus ICBMs", :class => "control-label" %>
-      <%= f.number_field :subsPlusIcbms, :class => "form-control" %>
+      <%= f.number_field :subsPlusIcbms, :class => "form-control derived-value" %>
     </div>
     <div class="form-group">
       <%= f.label :subsPlusBombs, "Plus bombs", :class => "control-label" %>
-      <%= f.number_field :subsPlusBombs, :class => "form-control" %>
+      <%= f.number_field :subsPlusBombs, :class => "form-control derived-value" %>
     </div>
     <div class="form-group">
       <%= f.label :subsTubes, "Number of tubes per sub", :class => "control-label" %>
-      <%= f.number_field :subsTubes, :class => "form-control" %>
+      <%= f.number_field :subsTubes, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :subsMirv, "SLBM MIRV ratio", :class => "control-label" %>
-      <%= f.text_field :subsMirv, :class => "form-control" %>
+      <%= f.text_field :subsMirv, :class => "form-control derived-value" %>
     </div>
     <div class="form-group">
       <%= f.label :subsNavy, "Number of weapons assigned to navy", :class => "control-label" %>
-      <%= f.number_field :subsNavy, :class => "form-control" %>
+      <%= f.number_field :subsNavy, :class => "form-control derived-value" %>
     </div>
   </div><!--/.col-md-6-->
   <div class="col-md-6">
     <h2>Blue Force Bombers</h2>
     <div class="form-group">
       <%= f.label :bombsNumber, "Number of bombers", :class => "control-label" %>
-      <%= f.number_field :bombsNumber, :class => "form-control" %>
+      <%= f.number_field :bombsNumber, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :bombsSurvive, "Bombers generated and survive", :class => "control-label" %>
@@ -110,7 +109,7 @@
     <h2>Red Force</h2>
     <div class="form-group">
       <%= f.label :redRatio, "Red targeting ratio on blue ICBMs", :class => "control-label" %>
-      <%= f.number_field :redRatio, :class => "form-control" %>
+      <%= f.number_field :redRatio, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :redTarget, "Red target blue LCCs", :class => "control-label" %>
@@ -118,11 +117,11 @@
     </div>
     <div class="form-group">
       <%= f.label :redPk, :class => "Red pk against blue ICBMs" %>
-      <%= f.text_field :redPk, :class => "form-control" %>
+      <%= f.text_field :redPk, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :redBases, "Red weapons targeted on bases and crit assets", :class => "control-label" %>
-      <%= f.number_field :redBases, :class => "form-control" %>
+      <%= f.number_field :redBases, :class => "form-control", :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :redBlueIcbms, "Red weapons targeted on blue ICBMs", :class => "control-label" %>
