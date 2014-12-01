@@ -91,9 +91,9 @@ class Simulation < ActiveRecord::Base
     else
       if self.redRatio = 0
         self.blueSurviving = self.icbmAvail + self.icbmAvail
-      else if self.redRatio = 1
+      elsif self.redRatio = 1
         self.blueSurviving = self.icbmAvail
-      else if self.redRatio = 2
+      elsif self.redRatio = 2
         self.blueSurviving = self.icbmMax * (1 - (self.redPk^self.redRatio))
       end
     end
