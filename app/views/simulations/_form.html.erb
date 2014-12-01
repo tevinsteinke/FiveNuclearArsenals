@@ -28,7 +28,7 @@
     <h2>Blue Force ICBMS</h2>
     <div class="form-group">
       <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
-      <%= f.number_field :icbmMax, :class => "form-control", :required => true %>
+      <%= f.number_field :icbmMax, :class => "form-control", :required => true, :placeholder => "0 to 450" %>
     </div>
     <div class="form-group">
       <%= f.label :icbmMirv, "MIRV ratio on ICBMs", :class => "control-label" %>
@@ -53,11 +53,11 @@
     <h2>Blue force subs</h2>
     <div class="form-group">
       <%= f.label :subsOperational, "Number of operational blue subs", :class => "control-label" %>
-      <%= f.number_field :subsOperational, :class => "form-control", :required => true %>
+      <%= f.number_field :subsOperational, :class => "form-control", :required => true, :placeholder => "1 to 14" %>
     </div>
     <div class="form-group">
       <%= f.label :subsSeaRate, "\"At sea rate\" for blue subs", :class => "control-label" %>
-      <%= f.text_field :subsSeaRate, :class => "form-control", :required => true %>
+      <%= f.text_field :subsSeaRate, :class => "form-control", :required => true, :placeholder => "50% to 100%" %>
     </div>
     <div class="form-group">
       <%= f.label :subsAtSea, "Number of subs at sea", :class => "control-label" %>
@@ -81,7 +81,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsTubes, "Number of tubes per sub", :class => "control-label" %>
-      <%= f.number_field :subsTubes, :class => "form-control", :required => true %>
+      <%= f.number_field :subsTubes, :class => "form-control", :required => true, :placeholder => "12 to 24" %>
     </div>
     <div class="form-group">
       <%= f.label :subsMirv, "SLBM MIRV ratio", :class => "control-label" %>
@@ -109,19 +109,19 @@
     <h2>Red Force</h2>
     <div class="form-group">
       <%= f.label :redRatio, "Red targeting ratio on blue ICBMs", :class => "control-label" %>
-      <%= f.number_field :redRatio, :class => "form-control", :required => true %>
+      <%= f.number_field :redRatio, :class => "form-control", :required => true, :placeholder => "0, 1, or 2" %>
     </div>
     <div class="form-group">
       <%= f.label :redTarget, "Red target blue LCCs", :class => "control-label" %>
       <%= f.check_box :redTarget, :class => "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :redPk, :class => "Red pk against blue ICBMs" %>
-      <%= f.text_field :redPk, :class => "form-control", :required => true %>
+      <%= f.label :redPk, "Red pk against blue ICBMs", :class => "control-label" %>
+      <%= f.text_field :redPk, :class => "form-control", :required => true, :placeholder => "0 to 100% (multiples of 5)" %>
     </div>
     <div class="form-group">
       <%= f.label :redBases, "Red weapons targeted on bases and crit assets", :class => "control-label" %>
-      <%= f.number_field :redBases, :class => "form-control", :required => true %>
+      <%= f.number_field :redBases, :class => "form-control", :required => true, :placeholder => "0 to 100 (multiples of 5)" %>
     </div>
     <div class="form-group">
       <%= f.label :redBlueIcbms, "Red weapons targeted on blue ICBMs", :class => "control-label" %>
