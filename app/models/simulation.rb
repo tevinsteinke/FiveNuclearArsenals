@@ -8,6 +8,8 @@ class Simulation < ActiveRecord::Base
   before_save :calc_subs_mirv
   before_save :calc_red_blue_icbms
   before_save :calc_red_first_strike
+  before_save :calc_red_surviving
+  before_save :calc_blue_surviving
 
   def calc_icbm_avail
     unless self.icbmMax.blank? || self.icbmProb.blank? || self.icbmMirv.blank?
@@ -74,6 +76,33 @@ class Simulation < ActiveRecord::Base
       self.redFirstStrike = self.redInventory - self.redBlueIcbms - self.icbmAvail
     else
       self.redFirstStrike = self.redInventory - self.redBlueIcbms
+    end
+  end
+
+  def calc_red_surviving
+    unless self.redInventory.blank? || self.redFirstStrike.blank?
+      self.redSurviving = self.redInventory - self.redFirstStrike
+    end
+  end
+
+  def calc_blue_surviving
+    if self.icbmBlueLaunch
+      self.blueSurviving = self.icbmAvail
+    else
+      if self.redRatio = 0
+        self.blueSurviving = self.icbmAvail + self.icbmAvail
+      else if self.redRatio = 1
+        self.blueSurviving = self.icbmAvail
+      else if self.redRatio = 2
+        self.blueSurviving = self.icbmMax * (1 - (self.redPk^self.redRatio))
+      end
+    end
+    if self.bombsSurvive
+      if self.bombsPostStrike
+        self.blueSurviving += self.bombsPostStrike
+      else
+        self.blueSurviving += self.bombsNumber
+      end
     end
   end
 end
