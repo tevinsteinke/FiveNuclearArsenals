@@ -1,13 +1,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 $BLACK: #000;
+
+body {
+  font-size: 17px;
+}
 
 .derived-value {
   background-color: lighten($BLACK, 80%);
 }
 
 .modal-body {
-  max-height: 30em;
+  max-height: 24em;
   overflow: scroll;
+}
+
+.fa-hero {
+  margin-top: .5em;
+  font-size: 10em;
+}
+
+* {
+  font-family: Arimo, Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1.05em;
+  line-height: 1.3;
 }
