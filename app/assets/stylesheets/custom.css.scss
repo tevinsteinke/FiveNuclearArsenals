@@ -6,3 +6,8 @@ $BLACK: #000;
 .derived-value {
   background-color: lighten($BLACK, 80%);
 }
+
+.modal-body {
+  max-height: 30em;
+  overflow: scroll;
+}
