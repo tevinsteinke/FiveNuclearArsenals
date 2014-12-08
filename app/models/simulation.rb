@@ -27,12 +27,6 @@ class Simulation < ActiveRecord::Base
     end
   end
 
-  def calc_weaps_at_sea
-    unless self.subsMirv.blank? || self.subsTubes.blank? || self.subsAtSea.blank?
-      self.subsWeaps = self.subsMirv * self.subsTubes * self.subsAtSea
-    end
-  end
-
   def calc_subs_plus_icbms
     unless self.subsWeaps.blank? || self.icbmAvail.blank?
       self.subsPlusIcbms = self.subsWeaps * self.icbmAvail
@@ -61,6 +55,12 @@ class Simulation < ActiveRecord::Base
     end
   end
 
+  def calc_weaps_at_sea
+    unless self.subsMirv.blank? || self.subsTubes.blank? || self.subsAtSea.blank?
+      self.subsWeaps = self.subsMirv * self.subsTubes * self.subsAtSea
+    end
+  end
+
   def calc_red_blue_icbms
     unless self.icbmMax.blank? || self.redRatio.blank?
       if self.redTarget
@@ -72,11 +72,14 @@ class Simulation < ActiveRecord::Base
   end
 
   def calc_red_first_strike
-    if self.icbmBlueLaunch
-      self.redFirstStrike = self.redInventory - self.redBlueIcbms - self.icbmAvail
-    else
-      self.redFirstStrike = self.redInventory - self.redBlueIcbms
+    unless self.redBlueIcbms.blank? || self.redBases.blank?
+      self.redFirstStrike = self.redBlueIcbms + self.redBases
     end
+    #if self.icbmBlueLaunch
+      #self.redFirstStrike = self.redInventory - self.redBlueIcbms - self.icbmAvail
+    #else
+      #self.redFirstStrike = self.redInventory - self.redBlueIcbms
+    #end
   end
 
   def calc_red_surviving
