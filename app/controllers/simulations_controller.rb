@@ -69,6 +69,6 @@ class SimulationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def simulation_params
-      params.require(:simulation).permit(:blueInventory, :redInventory, :icbmMax, :icbmMirv, :icbmProb, :icbmAvail, :icbmBlueLaunch, :icbmBluePk, :subsOperational, :subsAtSea, :subsRoundUp, :subsWeaps, :subsPlusIcbms, :subsPlusBombs, :subsTubes, :subsMirv, :subsNavy, :bombsNumber, :bombsSurvive, :bombsPostStrike, :redRatio, :redTarget, :redPk, :redBases, :redBlueIcbms, :redFirstStrike, :redSurviving, :blueSurviving, :deltaSurviving, :ratioSurviving)
+      params.require(:simulation).permit(:blueInventory, :redInventory, :icbmMax, :icbmMirv, :icbmProb, :icbmAvail, :icbmBlueLaunch, :icbmBluePk, :subsOperational, :subsAtSea, :subsRoundUp, :subsWeaps, :subsPlusIcbms, :subsPlusBombs, :subsTubes, :subsMirv, :subsNavy, :bombsNumber, :bombsSurvive, :bombsPostStrike, :redRatio, :redTarget, :redPk, :redBases, :redBlueIcbms, :redFirstStrike, :redSurviving, :blueSurviving, :deltaSurviving, :ratioSurviving, :subsSeaRate)
     end
 end
