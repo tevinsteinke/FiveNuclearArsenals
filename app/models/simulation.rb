@@ -44,14 +44,14 @@ class Simulation < ActiveRecord::Base
   end
 
   def calc_subs_navy
-    unless self.icbmMax.blank? || self.blueInventory.blank?
-      self.subsNavy = self.blueInventory - self.icbmMax
+    unless self.icbmMax.blank? || self.blueInventory.blank? || self.icbmMirv.blank? || self.bombsNumber.blank?
+      self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - self.bombsNumber
     end
   end
 
   def calc_subs_mirv
     unless self.subsNavy.blank? || self.subsOperational.blank? || self.subsTubes.blank?
-      self.subsMirv = self.subsNavy / (self.subsOperational * self.subsTubes)
+      self.subsMirv = (self.subsNavy.to_f / (self.subsOperational.to_f * self.subsTubes.to_f)).round(2)
     end
   end
 
@@ -92,11 +92,11 @@ class Simulation < ActiveRecord::Base
     if self.icbmBlueLaunch
       self.blueSurviving = self.icbmAvail
     else
-      if self.redRatio = 0
+      if self.redRatio == 0
         self.blueSurviving = self.icbmAvail + self.icbmAvail
-      elsif self.redRatio = 1
+      elsif self.redRatio == 1
         self.blueSurviving = self.icbmAvail
-      elsif self.redRatio = 2
+      elsif self.redRatio == 2
         self.blueSurviving = self.icbmMax * (1 - (self.redPk^self.redRatio))
       end
     end

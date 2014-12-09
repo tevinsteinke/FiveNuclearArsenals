@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129191227) do
+ActiveRecord::Schema.define(version: 20141209231542) do
 
   create_table "simulations", force: true do |t|
     t.integer  "blueInventory"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141129191227) do
     t.integer  "subsPlusIcbms"
     t.integer  "subsPlusBombs"
     t.integer  "subsTubes"
-    t.float    "subsMirv"
+    t.decimal  "subsMirv",        precision: 10, scale: 2
     t.integer  "subsNavy"
     t.integer  "bombsNumber"
     t.boolean  "bombsSurvive"
