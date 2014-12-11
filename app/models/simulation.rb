@@ -29,13 +29,13 @@ class Simulation < ActiveRecord::Base
 
   def calc_subs_plus_icbms
     unless self.subsWeaps.blank? || self.icbmAvail.blank?
-      self.subsPlusIcbms = self.subsWeaps * self.icbmAvail
+      self.subsPlusIcbms = self.subsWeaps + self.icbmAvail
     end
   end
 
   def calc_subs_plus_bombs
     unless self.subsPlusIcbms.blank?
-      if self.bombsPostStrike.blank?
+      if self.bombsPostStrike.blank? || self.bombsPostStrike == 0
         self.subsPlusBombs = self.subsPlusIcbms + self.bombsNumber
       else
         self.subsPlusBombs = self.subsPlusIcbms + self.bombsPostStrike
@@ -93,11 +93,13 @@ class Simulation < ActiveRecord::Base
       self.blueSurviving = self.icbmAvail
     else
       if self.redRatio == 0
-        self.blueSurviving = self.icbmAvail + self.icbmAvail
-      elsif self.redRatio == 1
-        self.blueSurviving = self.icbmAvail
-      elsif self.redRatio == 2
-        self.blueSurviving = self.icbmMax * (1 - (self.redPk^self.redRatio))
+        self.blueSurviving = self.icbmAvail + self.subsWeaps
+      else
+        if self.redPk == 1
+          self.blueSurviving = self.subsWeaps
+        else
+          self.blueSurviving = self.subsWeaps + (self.icbmMax * (1 - (self.redPk**self.redRatio))) * self.icbmProb
+        end
       end
     end
     if self.bombsSurvive
