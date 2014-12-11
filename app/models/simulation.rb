@@ -10,6 +10,8 @@ class Simulation < ActiveRecord::Base
   before_save :calc_red_first_strike
   before_save :calc_red_surviving
   before_save :calc_blue_surviving
+  before_save :calc_delta_surviving
+  before_save :calc_ratio_surviving
 
   def calc_icbm_avail
     unless self.icbmMax.blank? || self.icbmProb.blank? || self.icbmMirv.blank?
@@ -108,6 +110,18 @@ class Simulation < ActiveRecord::Base
       else
         self.blueSurviving += self.bombsNumber
       end
+    end
+  end
+
+  def calc_delta_surviving
+    unless self.redSurviving.blank? || self.blueSurviving.blank?
+      self.deltaSurviving = self.blueSurviving - self.redSurviving
+    end
+  end
+
+  def calc_ratio_surviving
+    unless self.redSurviving.blank? || self.blueSurviving.blank?
+      self.ratioSurviving = self.blueSurviving.to_f / self.redSurviving.to_f
     end
   end
 end
