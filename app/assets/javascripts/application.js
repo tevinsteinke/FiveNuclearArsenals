@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('.has-tooltip').tooltip();
+});
