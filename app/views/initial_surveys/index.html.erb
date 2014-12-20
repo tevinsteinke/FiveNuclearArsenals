@@ -1,0 +1,55 @@
+<h1>Listing initial_surveys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timespent</th>
+      <th>Currentposition</th>
+      <th>Positionaffiliation</th>
+      <th>Weaponsbenefit</th>
+      <th>Superiortorussia</th>
+      <th>Equaltorussia</th>
+      <th>Numberofweapons</th>
+      <th>Ssbnsurvivability</th>
+      <th>Survivabilityimportance</th>
+      <th>Ssbnvaluable</th>
+      <th>Icbmvaluable</th>
+      <th>Grouponesuggestions</th>
+      <th>Grouptwosuggestions</th>
+      <th>Groupthreesuggestions</th>
+      <th>Groupfoursuggestions</th>
+      <th>Groupfivesuggestions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @initial_surveys.each do |initial_survey| %>
+      <tr>
+        <td><%= initial_survey.timeSpent %></td>
+        <td><%= initial_survey.currentPosition %></td>
+        <td><%= initial_survey.positionAffiliation %></td>
+        <td><%= initial_survey.weaponsBenefit %></td>
+        <td><%= initial_survey.superiorToRussia %></td>
+        <td><%= initial_survey.equalToRussia %></td>
+        <td><%= initial_survey.numberOfWeapons %></td>
+        <td><%= initial_survey.ssbnSurvivability %></td>
+        <td><%= initial_survey.survivabilityImportance %></td>
+        <td><%= initial_survey.ssbnValuable %></td>
+        <td><%= initial_survey.icbmValuable %></td>
+        <td><%= initial_survey.groupOneSuggestions %></td>
+        <td><%= initial_survey.groupTwoSuggestions %></td>
+        <td><%= initial_survey.groupThreeSuggestions %></td>
+        <td><%= initial_survey.groupFourSuggestions %></td>
+        <td><%= initial_survey.groupFiveSuggestions %></td>
+        <td><%= link_to 'Show', initial_survey %></td>
+        <td><%= link_to 'Edit', edit_initial_survey_path(initial_survey) %></td>
+        <td><%= link_to 'Destroy', initial_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Initial survey', new_initial_survey_path %>

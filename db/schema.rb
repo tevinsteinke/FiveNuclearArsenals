@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209231542) do
+ActiveRecord::Schema.define(version: 20141220172833) do
+
+  create_table "initial_surveys", force: true do |t|
+    t.string   "timeSpent"
+    t.string   "currentPosition"
+    t.string   "positionAffiliation"
+    t.string   "weaponsBenefit"
+    t.string   "superiorToRussia"
+    t.string   "equalToRussia"
+    t.string   "numberOfWeapons"
+    t.string   "ssbnSurvivability"
+    t.string   "survivabilityImportance"
+    t.string   "ssbnValuable"
+    t.string   "icbmValuable"
+    t.string   "groupOneSuggestions"
+    t.string   "groupTwoSuggestions"
+    t.string   "groupThreeSuggestions"
+    t.string   "groupFourSuggestions"
+    t.string   "groupFiveSuggestions"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "simulations", force: true do |t|
     t.integer  "blueInventory"

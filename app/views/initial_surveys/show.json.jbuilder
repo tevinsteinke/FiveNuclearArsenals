@@ -1,0 +1,1 @@
+json.extract! @initial_survey, :id, :timeSpent, :currentPosition, :positionAffiliation, :weaponsBenefit, :superiorToRussia, :equalToRussia, :numberOfWeapons, :ssbnSurvivability, :survivabilityImportance, :ssbnValuable, :icbmValuable, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions, :created_at, :updated_at

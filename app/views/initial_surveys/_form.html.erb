@@ -1,0 +1,114 @@
+<%= form_for(@initial_survey) do |f| %>
+  <% if @initial_survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@initial_survey.errors.count, "error") %> prohibited this initial_survey from being saved:</h2>
+
+      <ul>
+      <% @initial_survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <%= f.label :timeSpent, "1. How often do you spend time on issues related to nuclear weapons?", :class => "control-label" %><br>
+      <%= f.radio_button :timeSpent, "Never" %> Never
+      <%= f.radio_button :timeSpent, "Monthly" %> Monthly
+      <%= f.radio_button :timeSpent, "Weekly" %> Weekly
+      <%= f.radio_button :timeSpent, "Daily" %> Daily
+    </div>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :currentPosition, "2. Which of the following best dcsribes your current position or employment?", :class => "control-label" %><br>
+    <%= f.radio_button :currentPosition, "Federal Government" %> Federal Government
+    <%= f.radio_button :currentPosition, "Contractor" %> Contractor
+    <%= f.radio_button :currentPosition, "Think Tank" %> Think Tank
+    <%= f.radio_button :currentPosition, "Student" %> Student
+    <%= f.radio_button :currentPosition, "University" %> University
+    <%= f.radio_button :currentPosition, "Non-Governmental or International Organization" %> Non-Governmental or Internal Organization
+    <%= f.radio_button :currentPosition, "Other" %> Other
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :positionAffiliation, "3. Which of the following best describes the national or international affiliation of your position or employment?", :class => "control-label" %><br>
+    <%= f.radio_button :positionAffiliation, "NATO - other than the United States" %> NATO - other than the United States
+    <%= f.radio_button :positionAffiliation, "ASEAN - other than the United STates" %> ASEAN - other than the United States
+    <%= f.radio_button :positionAffiliation, "OAS - other than the United States" %> OAS - other than the United States
+    <%= f.radio_button :positionAffiliation, "Other" %> Other
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :weaponsBenefit, "4. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %><br>
+    <%= f.radio_button :weaponsBenefit, "Strongly disagree" %> Strongly Disagree
+    <%= f.radio_button :weaponsBenefit, "Disagree" %> Disagree
+    <%= f.radio_button :weaponsBenefit, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :weaponsBenefit, "Agree" %> Agree
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :superiorToRussia, "5. To maintain strategic stability, the U.S. nuclear arsenal does not have to be superior in number to Russia’s nuclear arsenal." %><br>
+    <%= f.radio_button :superiorToRussia, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :superiorToRussia, "Disagree" %> Disagree
+    <%= f.radio_button :superiorToRussia, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :superiorToRussia, "Agree" %> Agree
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :equalToRussia, "6. To maintain strategic stability, the U.S. nuclear arsenal does not have to be equal in number to Russia’s nuclear arsenal." %><br>
+    <%= f.radio_button :equalToRussia, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :equalToRussia, "Disagree" %> Disagree
+    <%= f.radio_button :equalToRussia, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :equalToRussia, "Agree" %> Agree
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :numberOfWeapons, "7. The number of nuclear weapons possessed by a potential adversary is irrelevant to determining the appropriate size of the U.S. nuclear arsenal." %><br>
+    <%= f.radio_button :numberOfWeapons, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :numberOfWeapons, "Disagree" %> Disagree
+    <%= f.radio_button :numberOfWeapons, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :numberOfWeapons, "Agree" %> Agree
+    <%= f.radio_button :numberOfWeapons, "Strongly agree" %> Strongly agree
+  </div>
+  <div class="field">
+    <%= f.label :ssbnSurvivability, "8. The submarine-launched ballistic missile fleet (SSBN) is the most survivable of U.S. nuclear forces.", :class => "control-label" %><br>
+    <%= f.radio_button :ssbnSurvivability, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :ssbnSurvivability, "Disagree" %> Disagree
+    <%= f.radio_button :ssbnSurvivability, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :ssbnSurvivability, "Agree" %> Agree
+    <%= f.radio_button :ssbnSurvivability, "Strongly agree" %> Strongly agree
+  </div>
+  <div class="field">
+    <%= f.label :survivabilityImportance, "9. Survivability is the most important attribute for a nuclear weapons system." %><br>
+    <%= f.radio_button :survivabilityImportance, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :survivabilityImportance, "Strongly disagree" %> Disagree
+    <%= f.radio_button :survivabilityImportance, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :survivabilityImportance, "Agree" %> Agree
+  </div>
+  <div class="field">
+    <%= f.label :ssbnValuable %><br>
+    <%= f.text_field :ssbnValuable %>
+  </div>
+  <div class="field">
+    <%= f.label :icbmValuable %><br>
+    <%= f.text_field :icbmValuable %>
+  </div>
+  <div class="field">
+    <%= f.label :groupOneSuggestions %><br>
+    <%= f.text_field :groupOneSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupTwoSuggestions %><br>
+    <%= f.text_field :groupTwoSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupThreeSuggestions %><br>
+    <%= f.text_field :groupThreeSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupFourSuggestions %><br>
+    <%= f.text_field :groupFourSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupFiveSuggestions %><br>
+    <%= f.text_field :groupFiveSuggestions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
