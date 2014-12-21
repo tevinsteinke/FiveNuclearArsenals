@@ -65,7 +65,7 @@
     <%= f.radio_button :numberOfWeapons, "Agree" %> Agree
     <%= f.radio_button :numberOfWeapons, "Strongly agree" %> Strongly agree
   </div>
-  <div class="field">
+  <div class="form-group col-sm-12">
     <%= f.label :ssbnSurvivability, "8. The submarine-launched ballistic missile fleet (SSBN) is the most survivable of U.S. nuclear forces.", :class => "control-label" %><br>
     <%= f.radio_button :ssbnSurvivability, "Strongly disagree" %> Strongly disagree
     <%= f.radio_button :ssbnSurvivability, "Disagree" %> Disagree
@@ -73,40 +73,66 @@
     <%= f.radio_button :ssbnSurvivability, "Agree" %> Agree
     <%= f.radio_button :ssbnSurvivability, "Strongly agree" %> Strongly agree
   </div>
-  <div class="field">
+  <div class="form-group col-sm-12">
     <%= f.label :survivabilityImportance, "9. Survivability is the most important attribute for a nuclear weapons system." %><br>
     <%= f.radio_button :survivabilityImportance, "Strongly disagree" %> Strongly disagree
     <%= f.radio_button :survivabilityImportance, "Strongly disagree" %> Disagree
     <%= f.radio_button :survivabilityImportance, "Neither agree nor disagree" %> Neither agree nor disagree
     <%= f.radio_button :survivabilityImportance, "Agree" %> Agree
   </div>
-  <div class="field">
-    <%= f.label :ssbnValuable %><br>
-    <%= f.text_field :ssbnValuable %>
+  <div class="form-group col-sm-12">
+    <%= f.label :ssbnValuable, "10. The submarine-launched ballistic missile fleet (SSBN) is the most valuable component of U.S. nuclear forces." %><br>
+    <%= f.radio_button :ssbnValuable, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :ssbnValuable, "Disagree" %> Disagree
+    <%= f.radio_button :ssbnValuable, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :ssbnValuable, "Agree" %> Agree
+    <%= f.radio_button :ssbnValuable, "Strongly agree" %> Strongly agree
   </div>
-  <div class="field">
-    <%= f.label :icbmValuable %><br>
-    <%= f.text_field :icbmValuable %>
+  <div class="form-group col-sm-12">
+    <%= f.label :icbmValuable, "11. The value of the land-based intercontinental ballistic missile (ICBM) force diminishes as arsenal size decreases." %><br>
+    <%= f.radio_button :icbmValuable, "Strongly disagree" %> Strongly disagree
+    <%= f.radio_button :icbmValuable, "Disagree" %> Disagree
+    <%= f.radio_button :icbmValuable, "Neither agree nor disagree" %> Neither agree nor disagree
+    <%= f.radio_button :icbmValuable, "Agree" %> Agree
+    <%= f.radio_button :icbmValuable, "Strongly agree" %> Strongly agree
   </div>
-  <div class="field">
-    <%= f.label :groupOneSuggestions %><br>
-    <%= f.text_field :groupOneSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupTwoSuggestions %><br>
-    <%= f.text_field :groupTwoSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupThreeSuggestions %><br>
-    <%= f.text_field :groupThreeSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupFourSuggestions %><br>
-    <%= f.text_field :groupFourSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupFiveSuggestions %><br>
-    <%= f.text_field :groupFiveSuggestions %>
+  <div class="form-group col-sm-12">
+    <p>12. In the five nuclear arsenals below (depicted as Blue-to-Red), U.S. nuclear forces should...</p>
+    <%= f.label :groupOneSuggestions, "1550-1550" %><br>
+    <%= f.radio_button :groupOneSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.radio_button :groupOneSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.radio_button :groupOneSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.radio_button :groupOneSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.radio_button :groupOneSuggestions, "Retain SSBN" %> Retain SSBN
+    <%= f.radio_button :groupOneSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.label :groupTwoSuggestions, "1000-1550" %><br>
+    <%= f.radio_button :groupTwoSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.radio_button :groupTwoSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.radio_button :groupTwoSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.radio_button :groupTwoSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.radio_button :groupTwoSuggestions, "Retain SSBN" %> Retain SSBN
+    <%= f.radio_button :groupTwoSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.label :groupThreeSuggestions, "1000-1000" %><br>
+    <%= f.radio_button :groupThreeSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.radio_button :groupThreeSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.radio_button :groupThreeSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.radio_button :groupThreeSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.radio_button :groupThreeSuggestions, "Retain SSBN" %> Retain SSBN
+    <%= f.radio_button :groupThreeSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.label :groupFourSuggestions, "500-500" %><br>
+    <%= f.radio_button :groupFourSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.radio_button :groupFourSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.radio_button :groupFourSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.radio_button :groupFourSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.radio_button :groupFourSuggestions, "Retain SSBN" %> Retain SSBN
+    <%= f.radio_button :groupFourSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.label :groupFiveSuggestions, "300-300" %><br>
+    <%= f.radio_button :groupFiveSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.radio_button :groupFiveSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.radio_button :groupFiveSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.radio_button :groupFiveSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.radio_button :groupFiveSuggestions, "Retain SSBN" %> Retain SSBN
+    <%= f.radio_button :groupFiveSuggestions, "Retain ICBM" %> Retain ICBM
   </div>
   <div class="actions">
     <%= f.submit %>
