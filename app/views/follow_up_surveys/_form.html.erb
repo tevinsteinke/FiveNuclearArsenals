@@ -1,0 +1,69 @@
+<%= form_for(@follow_up_survey) do |f| %>
+  <% if @follow_up_survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@follow_up_survey.errors.count, "error") %> prohibited this follow_up_survey from being saved:</h2>
+
+      <ul>
+      <% @follow_up_survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weaponsBenefit %><br>
+    <%= f.text_field :weaponsBenefit %>
+  </div>
+  <div class="field">
+    <%= f.label :superiorRussia %><br>
+    <%= f.text_field :superiorRussia %>
+  </div>
+  <div class="field">
+    <%= f.label :equalRussia %><br>
+    <%= f.text_field :equalRussia %>
+  </div>
+  <div class="field">
+    <%= f.label :adversaryRelevancy %><br>
+    <%= f.text_field :adversaryRelevancy %>
+  </div>
+  <div class="field">
+    <%= f.label :ssbnSurvivability %><br>
+    <%= f.text_field :ssbnSurvivability %>
+  </div>
+  <div class="field">
+    <%= f.label :survivabilityImportance %><br>
+    <%= f.text_field :survivabilityImportance %>
+  </div>
+  <div class="field">
+    <%= f.label :ssbnValue %><br>
+    <%= f.text_field :ssbnValue %>
+  </div>
+  <div class="field">
+    <%= f.label :icbmValue %><br>
+    <%= f.text_field :icbmValue %>
+  </div>
+  <div class="field">
+    <%= f.label :groupOneSuggestions %><br>
+    <%= f.text_field :groupOneSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupTwoSuggestions %><br>
+    <%= f.text_field :groupTwoSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupThreeSuggestions %><br>
+    <%= f.text_field :groupThreeSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupFourSuggestions %><br>
+    <%= f.text_field :groupFourSuggestions %>
+  </div>
+  <div class="field">
+    <%= f.label :groupFiveSuggestions %><br>
+    <%= f.text_field :groupFiveSuggestions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

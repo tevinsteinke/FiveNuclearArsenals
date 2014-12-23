@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :follow_up_surveys
+
   resources :initial_surveys
 
   get 'static_pages/home'

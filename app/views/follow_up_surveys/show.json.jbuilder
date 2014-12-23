@@ -1,0 +1,1 @@
+json.extract! @follow_up_survey, :id, :weaponsBenefit, :superiorRussia, :equalRussia, :adversaryRelevancy, :ssbnSurvivability, :survivabilityImportance, :ssbnValue, :icbmValue, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions, :created_at, :updated_at

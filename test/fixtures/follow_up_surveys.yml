@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weaponsBenefit: MyString
+  superiorRussia: MyString
+  equalRussia: MyString
+  adversaryRelevancy: MyString
+  ssbnSurvivability: MyString
+  survivabilityImportance: MyString
+  ssbnValue: MyString
+  icbmValue: MyString
+  groupOneSuggestions: MyString
+  groupTwoSuggestions: MyString
+  groupThreeSuggestions: MyString
+  groupFourSuggestions: MyString
+  groupFiveSuggestions: MyString
+
+two:
+  weaponsBenefit: MyString
+  superiorRussia: MyString
+  equalRussia: MyString
+  adversaryRelevancy: MyString
+  ssbnSurvivability: MyString
+  survivabilityImportance: MyString
+  ssbnValue: MyString
+  icbmValue: MyString
+  groupOneSuggestions: MyString
+  groupTwoSuggestions: MyString
+  groupThreeSuggestions: MyString
+  groupFourSuggestions: MyString
+  groupFiveSuggestions: MyString

@@ -1,0 +1,49 @@
+<h1>Listing follow_up_surveys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weaponsbenefit</th>
+      <th>Superiorrussia</th>
+      <th>Equalrussia</th>
+      <th>Adversaryrelevancy</th>
+      <th>Ssbnsurvivability</th>
+      <th>Survivabilityimportance</th>
+      <th>Ssbnvalue</th>
+      <th>Icbmvalue</th>
+      <th>Grouponesuggestions</th>
+      <th>Grouptwosuggestions</th>
+      <th>Groupthreesuggestions</th>
+      <th>Groupfoursuggestions</th>
+      <th>Groupfivesuggestions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @follow_up_surveys.each do |follow_up_survey| %>
+      <tr>
+        <td><%= follow_up_survey.weaponsBenefit %></td>
+        <td><%= follow_up_survey.superiorRussia %></td>
+        <td><%= follow_up_survey.equalRussia %></td>
+        <td><%= follow_up_survey.adversaryRelevancy %></td>
+        <td><%= follow_up_survey.ssbnSurvivability %></td>
+        <td><%= follow_up_survey.survivabilityImportance %></td>
+        <td><%= follow_up_survey.ssbnValue %></td>
+        <td><%= follow_up_survey.icbmValue %></td>
+        <td><%= follow_up_survey.groupOneSuggestions %></td>
+        <td><%= follow_up_survey.groupTwoSuggestions %></td>
+        <td><%= follow_up_survey.groupThreeSuggestions %></td>
+        <td><%= follow_up_survey.groupFourSuggestions %></td>
+        <td><%= follow_up_survey.groupFiveSuggestions %></td>
+        <td><%= link_to 'Show', follow_up_survey %></td>
+        <td><%= link_to 'Edit', edit_follow_up_survey_path(follow_up_survey) %></td>
+        <td><%= link_to 'Destroy', follow_up_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Follow up survey', new_follow_up_survey_path %>
