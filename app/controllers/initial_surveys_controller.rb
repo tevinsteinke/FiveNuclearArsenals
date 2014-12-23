@@ -25,10 +25,11 @@ class InitialSurveysController < ApplicationController
   # POST /initial_surveys.json
   def create
     @initial_survey = InitialSurvey.new(initial_survey_params)
+    @new_simulation = Simulation.new
 
     respond_to do |format|
       if @initial_survey.save
-        format.html { redirect_to @initial_survey, notice: 'Initial survey was successfully created.' }
+        format.html { redirect_to @new_simulation, notice: 'Initial survey was successfully created.' }
         format.json { render :show, status: :created, location: @initial_survey }
       else
         format.html { render :new }
