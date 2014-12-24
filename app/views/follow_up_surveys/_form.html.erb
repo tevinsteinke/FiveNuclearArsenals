@@ -10,60 +10,58 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :weaponsBenefit %><br>
+<div class="row">
+  <div class="form-group col-sm-12">
+    <%= f.label :weaponsBenefit, "1. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %><br>
     <%= f.text_field :weaponsBenefit %>
   </div>
-  <div class="field">
-    <%= f.label :superiorRussia %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :superiorRussia, "2. To maintain strategic stability, the U.S. nuclear arsenal does not have to be superior in number to Russia’s nuclear arsenal.", :class => "control-label" %><br>
     <%= f.text_field :superiorRussia %>
   </div>
-  <div class="field">
-    <%= f.label :equalRussia %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :equalRussia, "3. To maintain strategic stability, the U.S. nuclear arsenal does not have to be equal in number to Russia’s nuclear arsenal.", :class => "control-label" %><br>
     <%= f.text_field :equalRussia %>
   </div>
-  <div class="field">
-    <%= f.label :adversaryRelevancy %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :adversaryRelevancy, "4. The number of nuclear weapons possessed by a potential adversary is irrelevant to determining the appropriate size of the U.S. nuclear arsenal.", :class => "control-label" %><br>
     <%= f.text_field :adversaryRelevancy %>
   </div>
-  <div class="field">
-    <%= f.label :ssbnSurvivability %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :ssbnSurvivability, "5. The submarine-launched ballistic missile fleet (SSBN) is the most survivable of U.S. nuclear forces.", :class => "control-label" %><br>
     <%= f.text_field :ssbnSurvivability %>
   </div>
-  <div class="field">
-    <%= f.label :survivabilityImportance %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :survivabilityImportance, "6. Survivability is the most important attribute for a nuclear weapons system." %><br>
     <%= f.text_field :survivabilityImportance %>
   </div>
-  <div class="field">
-    <%= f.label :ssbnValue %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :ssbnValue, "7. The submarine-launched ballistic missile fleet (SSBN) is the most valuable component of U.S. nuclear forces.", :class => "control-label" %><br>
     <%= f.text_field :ssbnValue %>
   </div>
-  <div class="field">
-    <%= f.label :icbmValue %><br>
+  <div class="form-group col-sm-12">
+    <%= f.label :icbmValue, "8. The value of the land-based intercontinental ballistic missile (ICBM) force diminishes as arsenal size decreases.", :class => "control-label" %><br>
     <%= f.text_field :icbmValue %>
   </div>
-  <div class="field">
-    <%= f.label :groupOneSuggestions %><br>
+  <div class="form-group col-sm-12">
+    <p>In the five nuclear arsenals below (depicted as Blue-to-Red), U.S. nuclear forces should...</p>
+    <%= f.label :groupOneSuggestions, "1550-1550", :class => "control-label" %><br>
     <%= f.text_field :groupOneSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupTwoSuggestions %><br>
+
+    <%= f.label :groupTwoSuggestions, "1000-1550", :class => "control-label" %><br>
     <%= f.text_field :groupTwoSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupThreeSuggestions %><br>
+ 
+    <%= f.label :groupThreeSuggestions, "1000-1000", :class => "control-label" %><br>
     <%= f.text_field :groupThreeSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupFourSuggestions %><br>
+
+    <%= f.label :groupFourSuggestions, "500-500", :class => "control-label" %><br>
     <%= f.text_field :groupFourSuggestions %>
-  </div>
-  <div class="field">
-    <%= f.label :groupFiveSuggestions %><br>
+
+    <%= f.label :groupFiveSuggestions, "350-350", :class => "control-label" %><br>
     <%= f.text_field :groupFiveSuggestions %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>
