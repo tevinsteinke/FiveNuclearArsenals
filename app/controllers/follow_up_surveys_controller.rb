@@ -5,6 +5,10 @@ class FollowUpSurveysController < ApplicationController
   # GET /follow_up_surveys.json
   def index
     @follow_up_surveys = FollowUpSurvey.all
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.csv { send_data FollowUpSurvey.to_csv(@follow_up_surveys) }
+    end
   end
 
   # GET /follow_up_surveys/1

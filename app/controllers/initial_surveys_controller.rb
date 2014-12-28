@@ -5,6 +5,10 @@ class InitialSurveysController < ApplicationController
   # GET /initial_surveys.json
   def index
     @initial_surveys = InitialSurvey.all
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.csv { send_data InitialSurvey.to_csv(@initial_surveys) }
+    end
   end
 
   # GET /initial_surveys/1
