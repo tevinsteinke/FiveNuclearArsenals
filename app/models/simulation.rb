@@ -13,6 +13,15 @@ class Simulation < ActiveRecord::Base
   before_save :calc_delta_surviving
   before_save :calc_ratio_surviving
 
+  def self.to_csv(simulations)
+    CSV.generate do |csv|
+      csv << column_names
+      simulations.each do |simulation|
+        csv << simulation.attributes.values
+      end
+    end
+  end
+
   def calc_icbm_avail
     unless self.icbmMax.blank? || self.icbmProb.blank? || self.icbmMirv.blank?
       self.icbmAvail = (self.icbmMax * self.icbmProb * self.icbmMirv).ceil

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :initial_surveys
 
   get 'static_pages/home'
+  get 'static_pages/admin', :path => "admin"
   
   root 'static_pages#home'
 

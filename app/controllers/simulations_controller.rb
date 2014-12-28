@@ -5,6 +5,10 @@ class SimulationsController < ApplicationController
   # GET /simulations.json
   def index
     @simulations = Simulation.all
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.csv { send_data Simulation.to_csv(@simulations) }
+    end
   end
 
   # GET /simulations/1
