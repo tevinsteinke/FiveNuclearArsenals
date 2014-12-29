@@ -93,7 +93,7 @@
     </div>
     <div class="form-group">
       <%= f.label :icbmAvail, "ICBMs available prior to red first strike", :class => "control-label" %>
-      <%= f.number_field :icbmAvail, :class => "form-control with-tooltip derived-value" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmAvail">?</button>
       <div class="modal fade" id="icbmAvail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -171,7 +171,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsAtSea, "Number of subs at sea", :class => "control-label" %>
-      <%= f.text_field :subsAtSea, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsAtSea">?</button>
       <div class="modal fade" id="subsAtSea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -197,7 +197,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsWeaps, "Weapons at sea", :class => "control-label" %>
-      <%= f.number_field :subsWeaps, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsWeaps">?</button>
       <div class="modal fade" id="subsWeaps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -219,7 +219,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsPlusIcbms, "Plus ICBMs", :class => "control-label" %>
-      <%= f.number_field :subsPlusIcbms, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsPlusIcbms">?</button>
       <div class="modal fade" id="subsPlusIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -241,7 +241,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsPlusBombs, "Plus bombs", :class => "control-label" %>
-      <%= f.number_field :subsPlusBombs, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsPlusBombs">?</button>
       <div class="modal fade" id="subsPlusBombs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -285,7 +285,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsMirv, "SLBM MIRV ratio", :class => "control-label" %>
-      <%= f.text_field :subsMirv, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsMirv">?</button>
       <div class="modal fade" id="subsMirv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -308,7 +308,7 @@
     </div>
     <div class="form-group">
       <%= f.label :subsNavy, "Number of weapons assigned to navy", :class => "control-label" %>
-      <%= f.number_field :subsNavy, :class => "form-control derived-value with-tooltip" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsNavy">?</button>
       <div class="modal fade" id="subsNavy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -411,7 +411,7 @@
     </div>
     <div class="form-group">
       <%= f.label :redPk, "Red pk against blue ICBMs", :class => "control-label" %>
-      <%= f.text_field :redPk, :class => "form-control", :required => true, :placeholder => "0 to 100% (multiples of 5)" %>
+      <%= f.text_field :redPk, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 100% (multiples of 5)" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redPk">?</button>
       <div class="modal fade" id="redPk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -437,7 +437,7 @@
     </div>
     <div class="form-group">
       <%= f.label :redBlueIcbms, "Red weapons targeted on blue ICBMs", :class => "control-label" %>
-      <%= f.number_field :redBlueIcbms, :class => "form-control derived-value" %>
+      <input type="text" class="form-control with-tooltip derived-value" disabled>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redBlueIcbms">?</button>
       <div class="modal fade" id="redBlueIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -467,24 +467,24 @@
     </div>
     <div class="form-group">
       <%= f.label :redFirstStrike, "Red weapons assigned first strike", :class => "control-label" %>
-      <%= f.number_field :redFirstStrike, :class => "form-control derived-value" %>
+      <input type="text" class="form-control derived-value" disabled>
     </div>
     <h2>Surviving weapons</h2>
     <div class="field">
       <%= f.label :redSurviving, "Red", :class => "control-label" %>
-      <%= f.number_field :redSurviving, :class => "form-control derived-value" %>
+      <input type="text" class="form-control derived-value" disabled>
     </div>
     <div class="field">
       <%= f.label :blueSurviving, "Blue", :class => "control-label" %>
-      <%= f.number_field :blueSurviving, :class => "form-control derived-value" %>
+      <input type="text" class="form-control derived-value" disabled>
     </div>
     <div class="field">
       <%= f.label :deltaSurviving, "Delta", :class => "control-label" %>
-      <%= f.number_field :deltaSurviving, :class => "form-control derived-value" %>
+      <input type="text" class="form-control derived-value" disabled>
     </div>
     <div class="field">
       <%= f.label :ratioSurviving, "Ratio", :class => "control-label" %>
-      <%= f.text_field :ratioSurviving, :class=> "form-control derived-value" %>
+      <input type="text" class="form-control derived-value" disabled>
     </div>
     <div class="actions">
       <%= f.submit "Calculate" %>
