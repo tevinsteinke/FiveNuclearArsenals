@@ -1,11 +1,11 @@
 class Simulation < ActiveRecord::Base
   before_save :calc_icbm_avail
   before_save :calc_subs_at_sea
-  before_save :calc_weaps_at_sea 
   before_save :calc_subs_plus_icbms
   before_save :calc_subs_plus_bombs
   before_save :calc_subs_navy
   before_save :calc_subs_mirv
+  before_save :calc_weaps_at_sea
   before_save :calc_red_blue_icbms
   before_save :calc_red_first_strike
   before_save :calc_red_surviving
