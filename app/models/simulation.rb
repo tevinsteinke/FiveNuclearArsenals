@@ -38,12 +38,6 @@ class Simulation < ActiveRecord::Base
     end
   end
 
-  def calc_subs_plus_icbms
-    unless self.subsWeaps.blank? || self.icbmAvail.blank?
-      self.subsPlusIcbms = self.subsWeaps + self.icbmAvail
-    end
-  end
-
   def calc_subs_plus_bombs
     unless self.subsPlusIcbms.blank?
       if self.bombsPostStrike.blank? || self.bombsPostStrike == 0
@@ -51,6 +45,12 @@ class Simulation < ActiveRecord::Base
       else
         self.subsPlusBombs = self.subsPlusIcbms + self.bombsPostStrike
       end
+    end
+  end
+
+  def calc_subs_plus_icbms
+    unless self.subsWeaps.blank? || self.icbmAvail.blank?
+      self.subsPlusIcbms = self.subsWeaps + self.icbmAvail
     end
   end
 
