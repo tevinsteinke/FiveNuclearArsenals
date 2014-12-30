@@ -109,7 +109,7 @@ class Simulation < ActiveRecord::Base
         if self.redPk == 1
           self.blueSurviving = self.subsWeaps
         else
-          self.blueSurviving = self.subsWeaps + (self.icbmMax * (1 - (self.redPk**self.redRatio))) * self.icbmProb
+          self.blueSurviving = self.subsWeaps + (self.icbmMax * (1 - (self.redPk*self.redRatio))) * self.icbmProb
         end
       end
     end
