@@ -31,9 +31,9 @@ class Simulation < ActiveRecord::Base
   def calc_subs_at_sea
     unless self.subsOperational.blank? || self.subsSeaRate.blank?
       if self.subsRoundUp
-        self.subsAtSea = (subsOperational * self.subsSeaRate).ceil
+        self.subsAtSea = (self.subsOperational * self.subsSeaRate).ceil
       else
-        self.subsAtSea = (subsOperational * self.subsSeaRate).floor
+        self.subsAtSea = (self.subsOperational * self.subsSeaRate).floor
       end
     end
   end
