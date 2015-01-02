@@ -2,8 +2,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+$WHITE: #fff;
 $BLACK: #000;
 $CLOUDS: #ecf0f1;
+$WET-ASPHAULT: #34495e;
 
 @mixin border-radius($r: .2em) {
   -webkit-border-radius: $r;
@@ -17,6 +19,21 @@ $CLOUDS: #ecf0f1;
 
 body {
   font-size: 15px;
+}
+
+header {
+  margin-bottom: 2em;
+  padding-top: 1.8em;
+  padding-bottom: 1.8em;
+  color: $WHITE;
+  background-color: $WET-ASPHAULT;
+  h1 {
+    margin: 0;
+    font-size: 1.8em;
+    > .fa {
+      margin-right: .4em;
+    }
+  }
 }
 
 .derived-value {
@@ -36,7 +53,7 @@ body {
 h2 {
   margin: 0;
   font-size: 1.56em;
-  color: #34495e;
+  color: $WET-ASPHAULT;
   font-weight: 700;
   + .form-group {
     margin-top: 1.2em;
@@ -73,10 +90,9 @@ p {
   }
   > label {
     font-weight: 400;
-    color: lighten($BLACK, 30%);
+    color: lighten($BLACK, 35%);
   }
 }
-
 
 .form-control.with-tooltip {
   width: 88%;
@@ -93,6 +109,9 @@ p {
   }
 }
 
-.has-tooltip {
-  
+.actions > .btn {
+  float: right;
+  margin-top: 1em;
+  font-size: 1.1em;
+  font-weight: 700;
 }
