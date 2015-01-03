@@ -13,6 +13,9 @@ class Simulation < ActiveRecord::Base
   before_save :calc_delta_surviving
   before_save :calc_ratio_surviving
 
+  MIRVRATIOS = [[1, 1], [2, 2], [3, 3]]
+  TARGETINGRATIOS = [["0:1", 0], ["1:1", 1], ["2:1", 2]]
+
   def self.to_csv(simulations)
     CSV.generate do |csv|
       csv << column_names
@@ -29,12 +32,9 @@ class Simulation < ActiveRecord::Base
   end
 
   def calc_subs_at_sea
+    self.subsRoundUp = true
     unless self.subsOperational.blank? || self.subsSeaRate.blank?
-      if self.subsRoundUp
-        self.subsAtSea = (self.subsOperational * self.subsSeaRate).ceil
-      else
-        self.subsAtSea = (self.subsOperational * self.subsSeaRate).floor
-      end
+      self.subsAtSea = (self.subsOperational * self.subsSeaRate).floor
     end
   end
 
