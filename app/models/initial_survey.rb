@@ -1,4 +1,5 @@
 class InitialSurvey < ActiveRecord::Base
+
   def self.to_csv(surveys)
     CSV.generate do |csv|
       csv << column_names
@@ -7,4 +8,5 @@ class InitialSurvey < ActiveRecord::Base
       end
     end
   end
+
 end

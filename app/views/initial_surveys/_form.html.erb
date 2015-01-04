@@ -12,6 +12,10 @@
   <% end %>
   <div class="row">
     <div class="form-group col-sm-12">
+      <%= f.label :user, "Please enter a username", :class => "control-label" %>
+      <%= f.text_field :user, :class => "form-control with-tooltip", :required => true %>
+    </div>
+    <div class="form-group col-sm-12">
       <%= f.label :timeSpent, "1. How often do you spend time on issues related to nuclear weapons?", :class => "control-label" %><br>
       <%= f.radio_button :timeSpent, "Never" %> Never
       <%= f.radio_button :timeSpent, "Monthly" %> Monthly

@@ -33,6 +33,8 @@
       <th>Bluesurviving</th>
       <th>Deltasurviving</th>
       <th>Ratiosurviving</th>
+      <th>User</th>
+      <th>Comments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -70,6 +72,8 @@
         <td><%= simulation.blueSurviving %></td>
         <td><%= simulation.deltaSurviving %></td>
         <td><%= simulation.ratioSurviving %></td>
+        <td><%= simulation.user %></td>
+        <td><%= simulation.comments %></td>
         <td><%= link_to 'Show', simulation %></td>
         <td><%= link_to 'Edit', edit_simulation_path(simulation) %></td>
         <td><%= link_to 'Destroy', simulation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

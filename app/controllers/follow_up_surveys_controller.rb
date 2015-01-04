@@ -29,6 +29,7 @@ class FollowUpSurveysController < ApplicationController
   # POST /follow_up_surveys.json
   def create
     @follow_up_survey = FollowUpSurvey.new(follow_up_survey_params)
+    @follow_up_survey.user = cookies[:user] 
 
     respond_to do |format|
       if @follow_up_survey.save

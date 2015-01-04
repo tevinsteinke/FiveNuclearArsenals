@@ -30,6 +30,7 @@ class InitialSurveysController < ApplicationController
   def create
     @initial_survey = InitialSurvey.new(initial_survey_params)
     @new_simulation = Simulation.new
+    cookies[:user] = @initial_survey.user
 
     respond_to do |format|
       if @initial_survey.save
@@ -74,6 +75,6 @@ class InitialSurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def initial_survey_params
-      params.require(:initial_survey).permit(:timeSpent, :currentPosition, :positionAffiliation, :weaponsBenefit, :superiorToRussia, :equalToRussia, :numberOfWeapons, :ssbnSurvivability, :survivabilityImportance, :ssbnValuable, :icbmValuable, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions)
+      params.require(:initial_survey).permit(:timeSpent, :currentPosition, :positionAffiliation, :weaponsBenefit, :superiorToRussia, :equalToRussia, :numberOfWeapons, :ssbnSurvivability, :survivabilityImportance, :ssbnValuable, :icbmValuable, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions, :user)
     end
 end

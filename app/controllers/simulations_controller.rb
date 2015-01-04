@@ -29,6 +29,7 @@ class SimulationsController < ApplicationController
   # POST /simulations.json
   def create
     @simulation = Simulation.new(simulation_params)
+    @simulation.user = cookies[:user] 
 
     respond_to do |format|
       if @simulation.save
@@ -73,6 +74,6 @@ class SimulationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def simulation_params
-      params.require(:simulation).permit(:blueInventory, :redInventory, :icbmMax, :icbmMirv, :icbmProb, :icbmAvail, :icbmBlueLaunch, :icbmBluePk, :subsOperational, :subsAtSea, :subsRoundUp, :subsWeaps, :subsPlusIcbms, :subsPlusBombs, :subsTubes, :subsMirv, :subsNavy, :bombsNumber, :bombsSurvive, :bombsPostStrike, :redRatio, :redTarget, :redPk, :redBases, :redBlueIcbms, :redFirstStrike, :redSurviving, :blueSurviving, :deltaSurviving, :ratioSurviving, :subsSeaRate)
+      params.require(:simulation).permit(:blueInventory, :redInventory, :icbmMax, :icbmMirv, :icbmProb, :icbmAvail, :icbmBlueLaunch, :icbmBluePk, :subsOperational, :subsAtSea, :subsRoundUp, :subsWeaps, :subsPlusIcbms, :subsPlusBombs, :subsTubes, :subsMirv, :subsNavy, :bombsNumber, :bombsSurvive, :bombsPostStrike, :redRatio, :redTarget, :redPk, :redBases, :redBlueIcbms, :redFirstStrike, :redSurviving, :blueSurviving, :deltaSurviving, :ratioSurviving, :subsSeaRate, :user, :comments)
     end
 end
