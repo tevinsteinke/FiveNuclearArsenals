@@ -1,3 +1,17 @@
-<h1>Initial Survey</h1>
-<h2>Been here before? <%= link_to "Opt out", new_simulation_path, :class => "" %></h2>
-<%= render 'form' %>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><i class="fa fa-bomb"></i>Initial Survey</h1>
+        <%= link_to "Opt out", new_simulation_path, :class => "btn reverse-btn" %>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-9">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

@@ -13,17 +13,31 @@
   <div class="row">
     <div class="form-group col-sm-12">
       <%= f.label :user, "Please enter a username", :class => "control-label" %>
-      <%= f.text_field :user, :class => "form-control with-tooltip", :required => true %>
+      <%= f.text_field :user, :class => "form-control", :required => true %>
     </div>
     <div class="form-group col-sm-12">
       <%= f.label :timeSpent, "1. How often do you spend time on issues related to nuclear weapons?", :class => "control-label" %><br>
-      <%= f.radio_button :timeSpent, "Never" %> Never
-      <%= f.radio_button :timeSpent, "Monthly" %> Monthly
-      <%= f.radio_button :timeSpent, "Weekly" %> Weekly
-      <%= f.radio_button :timeSpent, "Daily" %> Daily
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+          <%= f.radio_button :timeSpent, "Never" %>
+          <%= f.label :timeSpent, "Never", :value => "never" %>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <%= f.radio_button :timeSpent, "Monthly" %>
+          <%= f.label :timeSpent, "Monthly", :value => "monthly" %>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <%= f.radio_button :timeSpent, "Weekly" %>
+          <%= f.label :timeSpent, "Weekly", :value => "weekly" %>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <%= f.radio_button :timeSpent, "Daily" %>
+          <%= f.label :timeSpent, "Daily", :value => "daily" %>
+        </div>
+      </div>
     </div>
   <div class="form-group col-sm-12">
-    <%= f.label :currentPosition, "2. Which of the following best dcsribes your current position or employment?", :class => "control-label" %><br>
+    <%= f.label :currentPosition, "2. Which of the following best describes your current position or employment?", :class => "control-label" %><br>
     <%= f.radio_button :currentPosition, "Federal Government" %> Federal Government
     <%= f.radio_button :currentPosition, "Contractor" %> Contractor
     <%= f.radio_button :currentPosition, "Think Tank" %> Think Tank
@@ -102,40 +116,40 @@
   <div class="form-group col-sm-12">
     <p>12. In the five nuclear arsenals below (depicted as Blue-to-Red), U.S. nuclear forces should...</p>
     <%= f.label :groupOneSuggestions, "1550-1550" %><br>
-    <%= f.radio_button :groupOneSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
-    <%= f.radio_button :groupOneSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
-    <%= f.radio_button :groupOneSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
-    <%= f.radio_button :groupOneSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
-    <%= f.radio_button :groupOneSuggestions, "Retain SSBN" %> Retain SSBN
-    <%= f.radio_button :groupOneSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.check_box :groupOneSuggestions, :name => "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.check_box :groupOneSuggestions, :name => "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.check_box :groupOneSuggestions, :name => "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.check_box :groupOneSuggestions, :name => "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.check_box :groupOneSuggestions, :name => "Retain SSBN" %> Retain SSBN
+    <%= f.check_box :groupOneSuggestions, :name => "Retain ICBM" %> Retain ICBM
     <%= f.label :groupTwoSuggestions, "1000-1550" %><br>
-    <%= f.radio_button :groupTwoSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
-    <%= f.radio_button :groupTwoSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
-    <%= f.radio_button :groupTwoSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
-    <%= f.radio_button :groupTwoSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
-    <%= f.radio_button :groupTwoSuggestions, "Retain SSBN" %> Retain SSBN
-    <%= f.radio_button :groupTwoSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.check_box :groupTwoSuggestions, :name => "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.check_box :groupTwoSuggestions, :name => "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.check_box :groupTwoSuggestions, :name => "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.check_box :groupTwoSuggestions, :name => "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.check_box :groupTwoSuggestions, :name => "Retain SSBN" %> Retain SSBN
+    <%= f.check_box :groupTwoSuggestions, :name => "Retain ICBM" %> Retain ICBM
     <%= f.label :groupThreeSuggestions, "1000-1000" %><br>
-    <%= f.radio_button :groupThreeSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
-    <%= f.radio_button :groupThreeSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
-    <%= f.radio_button :groupThreeSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
-    <%= f.radio_button :groupThreeSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
-    <%= f.radio_button :groupThreeSuggestions, "Retain SSBN" %> Retain SSBN
-    <%= f.radio_button :groupThreeSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.check_box :groupThreeSuggestions, :name => "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.check_box :groupThreeSuggestions, :name => "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.check_box :groupThreeSuggestions, :name => "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.check_box :groupThreeSuggestions, :name => "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.check_box :groupThreeSuggestions, :name => "Retain SSBN" %> Retain SSBN
+    <%= f.check_box :groupThreeSuggestions, :name => "Retain ICBM" %> Retain ICBM
     <%= f.label :groupFourSuggestions, "500-500" %><br>
-    <%= f.radio_button :groupFourSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
-    <%= f.radio_button :groupFourSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
-    <%= f.radio_button :groupFourSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
-    <%= f.radio_button :groupFourSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
-    <%= f.radio_button :groupFourSuggestions, "Retain SSBN" %> Retain SSBN
-    <%= f.radio_button :groupFourSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.check_box :groupFourSuggestions, :name => "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.check_box :groupFourSuggestions, :name => "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.check_box :groupFourSuggestions, :name => "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.check_box :groupFourSuggestions, :name => "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.check_box :groupFourSuggestions, :name => "Retain SSBN" %> Retain SSBN
+    <%= f.check_box :groupFourSuggestions, :name => "Retain ICBM" %> Retain ICBM
     <%= f.label :groupFiveSuggestions, "300-300" %><br>
-    <%= f.radio_button :groupFiveSuggestions, "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
-    <%= f.radio_button :groupFiveSuggestions, "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
-    <%= f.radio_button :groupFiveSuggestions, "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
-    <%= f.radio_button :groupFiveSuggestions, "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
-    <%= f.radio_button :groupFiveSuggestions, "Retain SSBN" %> Retain SSBN
-    <%= f.radio_button :groupFiveSuggestions, "Retain ICBM" %> Retain ICBM
+    <%= f.check_box :groupFiveSuggestions, :name => "Prioritize ICBM over SSBN" %> Prioritize ICBM over SSBN
+    <%= f.check_box :groupFiveSuggestions, :name => "Consist of a triad (three delivery systems)" %> Consist of a triad (three delivery systems)
+    <%= f.check_box :groupFiveSuggestions, :name => "Consist of a dyad (two delivery systems)" %> Consist of a dyad (two delivery systems)
+    <%= f.check_box :groupFiveSuggestions, :name => "Consist of a monad (one delivery system)" %> Consist of a monad (one delivery system)
+    <%= f.check_box :groupFiveSuggestions, :name => "Retain SSBN" %> Retain SSBN
+    <%= f.check_box :groupFiveSuggestions, :name => "Retain ICBM" %> Retain ICBM
   </div>
   <div class="actions">
     <%= f.submit "Submit" %>

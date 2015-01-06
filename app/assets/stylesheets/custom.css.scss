@@ -28,10 +28,20 @@ header {
   color: $WHITE;
   background-color: $WET-ASPHAULT;
   h1 {
+    float: left;
     margin: 0;
     font-size: 1.8em;
     > .fa {
       margin-right: .4em;
+    }
+  }
+  .reverse-btn {
+    float: right;
+    color: $WHITE;
+    border-color: $WHITE;
+    &:hover, &:active, &:focus {
+      color: $WET-ASPHAULT;
+      background-color: $WHITE;   
     }
   }
 }
@@ -114,4 +124,16 @@ p {
   margin-top: 1em;
   font-size: 1.1em;
   font-weight: 700;
+}
+
+input[type="radio"] {
+  margin-right: .25em;
+}
+
+label {
+  font-weight: normal;
+}
+
+.form-group + .form-group {
+  margin-top: 1.2em;
 }
