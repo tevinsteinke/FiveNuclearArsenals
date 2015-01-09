@@ -153,3 +153,16 @@ label {
     border-color: lighten($WET-ASPHAULT, 45%);
   }
 }
+
+footer {
+  margin-top: 3em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: darken($CLOUDS, 75%);
+  border-top: 1px solid $CLOUDS;
+}
+
+label.user-label {
+  font-weight: bold;
+  color: #c0392b;
+}

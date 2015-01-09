@@ -11,5 +11,14 @@
 </head>
 <body>
   <%= yield %>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="small-12 columns">
+          &copy; <%= Date.today.strftime("%Y") %> Hunter Hustus, Northeastern University
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
