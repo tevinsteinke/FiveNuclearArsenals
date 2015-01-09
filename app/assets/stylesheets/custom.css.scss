@@ -141,3 +141,15 @@ label {
 .form-group + .form-group {
   margin-top: 1.6em;
 }
+
+.option-buttons {
+  margin-top: 1em;
+}
+
+.results-module {
+  margin-top: 1em;
+  background-color: lighten($WET-ASPHAULT, 65%);
+  hr {
+    border-color: lighten($WET-ASPHAULT, 45%);
+  }
+}
