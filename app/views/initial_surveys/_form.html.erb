@@ -247,9 +247,17 @@
           <%= f.label :groupOneSuggestions, "1550-1550" %>
         </th>
       </tr>
+      <tr>
+        <td>
+          <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Prioritize SSBN over ICBM", nil %>
+        </td>
+        <td>
+          Prioritize SSBN over ICBM
+        </td>
+      </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Prioritize ICBM over SSBN" %> 
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Prioritize ICBM over SSBN", nil %> 
           </td>
           <td>
             Prioritize ICBM over SSBN
@@ -257,7 +265,7 @@
         </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Consist of a triad (three delivery systems)" %>
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Consist of a triad (three delivery systems)", nil %>
           </td>
           <td>
             Consist of a triad (three delivery systems)
@@ -265,7 +273,7 @@
         </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Consist of a dyad (two delivery systems)" %> 
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Consist of a dyad (two delivery systems)", nil %> 
           </td>
           <td>
             Consist of a dyad (two delivery systems)
@@ -273,7 +281,7 @@
         </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Consist of a monad (one delivery system)" %>
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Consist of a monad (one delivery system)", nil %>
           </td>
           <td>
             Consist of a monad (one delivery system)
@@ -281,7 +289,7 @@
         </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Retain SSBN" %>
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Retain SSBN", nil %>
           </td>
           <td>
             Retain SSBN
@@ -289,7 +297,7 @@
         </tr>
         <tr>
           <td>
-            <%= f.check_box :groupOneSuggestions, :name => "Retain ICBM" %>
+            <%= f.check_box :groupOneSuggestions, { :multiple => "true" }, "Retain ICBM", nil %>
           </td>
           <td>
             Retain ICBM
@@ -299,12 +307,20 @@
     <table class="table">
       <tr>
         <th colspan="2">
-          <%= f.label :groupTwoSuggestions, "1000-1550" %>
+          <%= f.label :groupTwoSuggestions, "2200-2200" %>
         </th>
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Prioritize ICBM over SSBN" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Prioritize SSBN over ICBM", nil %>
+        </td>
+        <td>
+          Prioritize SSBN over ICBM
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Prioritize ICBM over SSBN", nil %>
         </td>
         <td>
           Prioritize ICBM over SSBN
@@ -312,7 +328,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Consist of a triad (three delivery systems)" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Consist of a triad (three delivery systems)", nil %>
         </td>
         <td>
           Consist of a triad (three delivery systems)
@@ -320,7 +336,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Consist of a dyad (two delivery systems)" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Consist of a dyad (two delivery systems)", nil %>
         </td>
         <td>
           Consist of a dyad (two delivery systems)
@@ -328,7 +344,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Consist of a monad (one delivery system)" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Consist of a monad (one delivery system)", nil %>
         </td>
         <td>
           Consist of a monad (one delivery system)
@@ -336,7 +352,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Retain SSBN" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Retain SSBN", nil %>
         </td>
         <td>
           Retain SSBN
@@ -344,7 +360,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupTwoSuggestions, :name => "Retain ICBM" %>
+          <%= f.check_box :groupTwoSuggestions, { :multiple => "true" }, "Retain ICBM", nil %>
         </td>
         <td>
           Retain ICBM
@@ -359,7 +375,15 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Prioritize ICBM over SSBN" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Prioritize SSBN over ICBM", nil %>
+        </td>
+        <td>
+          Prioritize SSBN over ICBM
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Prioritize ICBM over SSBN", nil %>
         </td>
         <td>
           Prioritize ICBM over SSBN
@@ -367,7 +391,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Consist of a triad (three delivery systems)" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Consist of a triad (three delivery systems)", nil %>
         </td>
         <td>
           Consist of a triad (three delivery systems)
@@ -375,7 +399,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Consist of a dyad (two delivery systems)" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Consist of a dyad (two delivery systems)", nil %>
         </td>
         <td>
           Consist of a dyad (two delivery systems)
@@ -383,7 +407,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Consist of a monad (one delivery system)" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Consist of a monad (one delivery system)", nil %>
         </td>
         <td>
           Consist of a monad (one delivery system)
@@ -391,7 +415,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Retain SSBN" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Retain SSBN", nil %>
         </td>
         <td>
           Retain SSBN
@@ -399,7 +423,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupThreeSuggestions, :name => "Retain ICBM" %>
+          <%= f.check_box :groupThreeSuggestions, { :multiple => "true" }, "Retain ICBM", nil %>
         </td>
         <td>
           Retain ICBM
@@ -414,7 +438,15 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Prioritize ICBM over SSBN" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Prioritize SSBN over ICBM", nil %>
+        </td>
+        <td>
+          Prioritize SSBN over ICBM
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Prioritize ICBM over SSBN", nil %>
         </td>
         <td>
           Prioritize ICBM over SSBN
@@ -422,7 +454,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Consist of a triad (three delivery systems)" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Consist of a triad (three delivery systems)", nil %>
         </td>
         <td>
           Consist of a triad (three delivery systems)
@@ -430,7 +462,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Consist of a dyad (two delivery systems)" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Consist of a dyad (two delivery systems)", nil %>
         </td>
         <td>
           Consist of a dyad (two delivery systems)
@@ -438,7 +470,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Consist of a monad (one delivery system)" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Consist of a monad (one delivery system)", nil %>
         </td>
         <td>
           Consist of a monad (one delivery system)
@@ -446,7 +478,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Retain SSBN" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Retain SSBN", nil %>
         </td>
         <td>
           Retain SSBN
@@ -454,7 +486,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFourSuggestions, :name => "Retain ICBM" %>
+          <%= f.check_box :groupFourSuggestions, { :multiple => "true" }, "Retain ICBM", nil %>
         </td>
         <td>
           Retain ICBM
@@ -469,7 +501,15 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Prioritize ICBM over SSBN" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Prioritize SSBN over ICBM", nil %>
+        </td>
+        <td>
+          Prioritize SSBN over ICBM
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Prioritize ICBM over SSBN", nil %>
         </td>
         <td>
           Prioritize ICBM over SSBN
@@ -477,7 +517,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Consist of a triad (three delivery systems)" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Consist of a triad (three delivery systems)", nil %>
         </td>
         <td>
           Consist of a triad (three delivery systems)
@@ -485,7 +525,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Consist of a dyad (two delivery systems)" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Consist of a dyad (two delivery systems)", nil %>
         </td>
         <td>
           Consist of a dyad (two delivery systems)
@@ -493,7 +533,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Consist of a monad (one delivery system)" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Consist of a monad (one delivery system)", nil %>
         </td>
         <td>
           Consist of a monad (one delivery system)
@@ -501,7 +541,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Retain SSBN" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Retain SSBN", nil %>
         </td>
         <td>
           Retain SSBN
@@ -509,7 +549,7 @@
       </tr>
       <tr>
         <td>
-          <%= f.check_box :groupFiveSuggestions, :name => "Retain ICBM" %>
+          <%= f.check_box :groupFiveSuggestions, { :multiple => "true" }, "Retain ICBM", nil %>
         </td>
         <td>
           Retain ICBM

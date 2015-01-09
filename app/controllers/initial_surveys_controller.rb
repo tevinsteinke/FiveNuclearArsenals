@@ -74,6 +74,24 @@ class InitialSurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def initial_survey_params
-      params.require(:initial_survey).permit(:timeSpent, :currentPosition, :positionAffiliation, :weaponsBenefit, :superiorToRussia, :equalToRussia, :numberOfWeapons, :ssbnSurvivability, :survivabilityImportance, :ssbnValuable, :icbmValuable, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions, :user)
+      params.require(:initial_survey).permit(
+        :timeSpent, 
+        :currentPosition, 
+        :positionAffiliation, 
+        :weaponsBenefit, 
+        :superiorToRussia, 
+        :equalToRussia, 
+        :numberOfWeapons, 
+        :ssbnSurvivability, 
+        :survivabilityImportance, 
+        :ssbnValuable, 
+        :icbmValuable, 
+        :user, 
+        :groupOneSuggestions => [], 
+        :groupTwoSuggestions => [],
+        :groupThreeSuggestions => [], 
+        :groupFourSuggestions => [], 
+        :groupFiveSuggestions => []
+      )
     end
 end
