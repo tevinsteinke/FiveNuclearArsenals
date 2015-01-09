@@ -1,0 +1,31 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><i class="fa fa-bomb"></i>1st Strike Advantage Calculator (Edit Simulation)</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <%= form_for(@simulation) do |f| %>
+  <% if @simulation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@simulation.errors.count, "error") %> prohibited this initial_survey from being saved:</h2>
+
+      <ul>
+      <% @simulation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <%= f.label :user, "Enter comments.", :class => "control-label user-label" %>
+      <%= f.text_area :comments, :class => "form-control", :required => true %>
+    </div>
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

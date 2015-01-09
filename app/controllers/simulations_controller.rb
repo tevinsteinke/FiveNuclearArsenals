@@ -25,6 +25,12 @@ class SimulationsController < ApplicationController
   def edit
   end
 
+  def add_comments
+    @simulation = Simulation.find(params[:simulation_id])
+    @simulation.comments = (params[:comments])
+    @simulation.save
+  end
+
   # POST /simulations
   # POST /simulations.json
   def create

@@ -98,7 +98,7 @@
       </div>
       <div class="option-buttons">
         <%= link_to 'Edit', edit_simulation_path(@simulation), :class => "btn btn-primary" %> 
-        <%= link_to 'Save as final settings', new_follow_up_survey_path, :class => "btn btn-primary" %>
+        <%= link_to 'Save as final settings', simulation_add_comments_path(@simulation), :class => "btn btn-primary" %>
         <%= link_to 'Proceed to final survey', new_follow_up_survey_path, :class => "btn btn-primary" %>
       </div>
       <div class="form-fields-module results-module">

@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   
   root 'static_pages#home'
 
-  resources :simulations
+  resources :simulations do
+    get 'add_comments'
+  end
+
+  #get 'simulations/:id/add_comments' => 'simulation#add_comments', as: :simulation_add_comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
