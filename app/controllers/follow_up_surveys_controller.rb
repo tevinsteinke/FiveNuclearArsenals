@@ -74,6 +74,21 @@ class FollowUpSurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def follow_up_survey_params
-      params.require(:follow_up_survey).permit(:weaponsBenefit, :superiorRussia, :equalRussia, :adversaryRelevancy, :ssbnSurvivability, :survivabilityImportance, :ssbnValue, :icbmValue, :groupOneSuggestions, :groupTwoSuggestions, :groupThreeSuggestions, :groupFourSuggestions, :groupFiveSuggestions)
+      params.require(:follow_up_survey).permit(
+        :weaponsBenefit,
+        :superiorRussia,
+        :equalRussia,
+        :adversaryRelevancy,
+        :ssbnSurvivability,
+        :survivabilityImportance,
+        :ssbnValue,
+        :icbmValue,
+        :groupOneSuggestions,
+        :groupTwoSuggestions,
+        :groupThreeSuggestions,
+        :groupFourSuggestions,
+        :groupFiveSuggestions,
+        :comments
+        )
     end
 end

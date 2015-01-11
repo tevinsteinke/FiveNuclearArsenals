@@ -12,6 +12,10 @@
   <% end %>
 <div class="row">
   <div class="form-group col-sm-12">
+  </div>
+  <%= f.label :comments, "Please enter final comments.", :class => "user-label" %>
+  <%= f.text_area :comments, :class => "form-control", :required => "true" %>
+  <div class="form-group col-sm-12">
     <%= f.label :weaponsBenefit, "1. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %><br>
     <%= f.radio_button :weaponsBenefit, "Strongly disagree" %> Strongly disagree
     <%= f.radio_button :weaponsBenefit, "Disagree" %> Disagree
