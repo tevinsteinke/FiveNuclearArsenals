@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1><i class="fa fa-bomb"></i>1st Strike Advantage Calculator (Edit Simulation)</h1>
+        <h1><i class="fa fa-bomb"></i>1st Strike Advantage Calculator (Add Comments)</h1>
       </div>
     </div>
   </div>
@@ -25,7 +25,9 @@
       <%= f.label :user, "Enter comments.", :class => "control-label user-label" %>
       <%= f.text_area :comments, :class => "form-control", :required => true %>
     </div>
-    <%= f.submit "Submit", :class => "btn btn-primary" %>
+    <div class="form-group col-sm-12">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
     <% end %>
   </div>
 </div>

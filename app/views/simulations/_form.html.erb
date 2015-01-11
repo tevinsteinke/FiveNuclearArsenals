@@ -52,7 +52,7 @@
     </div>
     <div class="form-group">
       <%= f.label :icbmMirv, "MIRV ratio on ICBMs", :class => "control-label" %>
-      <%= f.select:icbmMirv, Simulation::MIRVRATIOS, { :include_blank => 'Select a MIRV ratio.' }, :class => "form-control with-tooltip", :required => true %>
+      <%= f.select:icbmMirv, Simulation::MIRVRATIOS, { :include_blank => 'Select a MIRV ratio.' }, :class => "form-control with-tooltip", :required => true, :selected => params[:icbmMirv] %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmMirv">?</button>
       <div class="modal fade" id="icbmMirv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -393,7 +393,7 @@
     <h2>Attacker Force</h2>
     <div class="form-group">
       <%= f.label :redRatio, "Attacker targeting ratio on defender ICBMs", :class => "control-label" %>
-      <%= f.select:icbmMirv, Simulation::TARGETINGRATIOS, { :include_blank => 'Select a targeting ratio.' }, :class => "form-control with-tooltip", :required => true %>
+      <%= f.select:redRatio, Simulation::TARGETINGRATIOS, { :include_blank => 'Select a targeting ratio.' }, :class => "form-control with-tooltip", :required => true, :selected => params[:redRatio] %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redRatio">?</button>
       <div class="modal fade" id="redRatio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
