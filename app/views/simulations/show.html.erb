@@ -97,9 +97,9 @@
         </div>
       </div>
       <div class="option-buttons">
-        <%= link_to 'Edit', edit_simulation_path(@simulation), :class => "btn btn-primary" %> 
-        <%= link_to 'Save as final settings', simulation_add_comments_path(@simulation), :class => "btn btn-primary" %>
-        <%= link_to 'Proceed to final survey', new_follow_up_survey_path, :class => "btn btn-primary" %>
+        <p><%= link_to 'Edit force structure', edit_simulation_path(@simulation), :class => "btn btn-warning" %></p>
+        <p><%= link_to 'Recommend this force structure', simulation_add_comments_path(@simulation), :class => "btn btn-primary" %></p>
+        <p><%= link_to 'Done with force structure analysis', new_follow_up_survey_path, :class => "btn btn-success" %></p>
       </div>
       <div class="form-fields-module results-module">
         <h2>Calculated values</h2>

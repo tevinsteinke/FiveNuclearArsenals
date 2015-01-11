@@ -28,6 +28,7 @@ class SimulationsController < ApplicationController
   def add_comments
     @simulation = Simulation.find(params[:simulation_id])
     @simulation.comments = (params[:comments])
+
     @simulation.save
   end
 
@@ -53,8 +54,13 @@ class SimulationsController < ApplicationController
   def update
     respond_to do |format|
       if @simulation.update(simulation_params)
-        format.html { redirect_to @simulation, notice: 'Simulation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @simulation }
+        if @simulation.comments
+          format.html { redirect_to new_simulation_path, notice: 'Comments were successfully added.' }
+          format.json { render :show, status: :ok, location: @simulation }
+        else
+          format.html { redirect_to @simulation, notice: 'Simulation was successfully updated.' }
+          format.json { render :show, status: :ok, location: @simulation }
+        end
       else
         format.html { render :edit }
         format.json { render json: @simulation.errors, status: :unprocessable_entity }
@@ -80,6 +86,40 @@ class SimulationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def simulation_params
-      params.require(:simulation).permit(:blueInventory, :redInventory, :icbmMax, :icbmMirv, :icbmProb, :icbmAvail, :icbmBlueLaunch, :icbmBluePk, :subsOperational, :subsAtSea, :subsRoundUp, :subsWeaps, :subsPlusIcbms, :subsPlusBombs, :subsTubes, :subsMirv, :subsNavy, :bombsNumber, :bombsSurvive, :bombsPostStrike, :redRatio, :redTarget, :redPk, :redBases, :redBlueIcbms, :redFirstStrike, :redSurviving, :blueSurviving, :deltaSurviving, :ratioSurviving, :subsSeaRate, :user, :comments)
+      params.require(:simulation).permit(
+        :blueInventory, 
+        :redInventory, 
+        :icbmMax, 
+        :icbmMirv, 
+        :icbmProb, 
+        :icbmAvail, 
+        :icbmBlueLaunch, 
+        :icbmBluePk, 
+        :subsOperational, 
+        :subsAtSea, 
+        :subsRoundUp, 
+        :subsWeaps, 
+        :subsPlusIcbms, 
+        :subsPlusBombs, 
+        :subsTubes, 
+        :subsMirv, 
+        :subsNavy, 
+        :bombsNumber, 
+        :bombsSurvive, 
+        :bombsPostStrike, 
+        :redRatio, 
+        :redTarget, 
+        :redPk,
+        :redBases, 
+        :redBlueIcbms, 
+        :redFirstStrike, 
+        :redSurviving, 
+        :blueSurviving, 
+        :deltaSurviving, 
+        :ratioSurviving, 
+        :subsSeaRate, 
+        :user, 
+        :comments
+      )
     end
 end
