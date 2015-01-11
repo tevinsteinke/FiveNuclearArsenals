@@ -55,8 +55,13 @@ class SimulationsController < ApplicationController
     respond_to do |format|
       if @simulation.update(simulation_params)
         if @simulation.comments
-          format.html { redirect_to new_simulation_path, notice: 'Comments were successfully added.' }
-          format.json { render :show, status: :ok, location: @simulation }
+          if cookies[:doneForceStructure]
+            format.html { redirect_to new_follow_up_survey_path, notice: 'Comments were successfully added.' }
+            format.json { render :show, status: :ok, location: @simulation }
+          else
+            format.html { redirect_to new_simulation_path, notice: 'Comments were successfully added.' }
+            format.json { render :show, status: :ok, location: @simulation }
+          end
         else
           format.html { redirect_to @simulation, notice: 'Simulation was successfully updated.' }
           format.json { render :show, status: :ok, location: @simulation }

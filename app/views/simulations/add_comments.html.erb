@@ -26,8 +26,23 @@
       <%= f.text_area :comments, :class => "form-control", :required => true %>
     </div>
     <div class="form-group col-sm-12">
-      <%= f.submit "Submit", :class => "btn btn-primary" %>
+      <%= f.submit "Save and proceed to next analysis", :class => "btn btn-primary" %>
+      <%= f.submit "Save and finish with force structure analysis", :class => "btn btn-primary done" %>
     </div>
     <% end %>
   </div>
 </div>
+<script>
+  function createCookie(name,value,days) {
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime()+(days*24*60*60*1000));
+          var expires = "; expires="+date.toGMTString();
+      }
+      else var expires = "";
+      document.cookie = name+"="+value+expires+"; path=/";
+  }
+  $('.done').click(function() {
+    createCookie('doneForceStructure','true');
+  })
+</script>
