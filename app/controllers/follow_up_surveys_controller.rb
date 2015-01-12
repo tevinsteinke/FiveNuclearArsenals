@@ -83,12 +83,12 @@ class FollowUpSurveysController < ApplicationController
         :survivabilityImportance,
         :ssbnValue,
         :icbmValue,
-        :groupOneSuggestions,
-        :groupTwoSuggestions,
-        :groupThreeSuggestions,
-        :groupFourSuggestions,
-        :groupFiveSuggestions,
-        :comments
+        :comments, 
+        :groupOneSuggestions => [], 
+        :groupTwoSuggestions => [],
+        :groupThreeSuggestions => [], 
+        :groupFourSuggestions => [], 
+        :groupFiveSuggestions => []
         )
     end
 end
