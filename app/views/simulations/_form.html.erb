@@ -364,8 +364,8 @@
       <%= f.label :bombsSurvive, "Bombers generated and survive", :class => "control-label" %>
     </div>
     <div class="form-group">
-      <%= f.label :bombsPostStrike, "Weapons versus bombers post-strike", :class => "control-label" %>
-      <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip" %>
+      <%= f.label :bombsPostStrike, "Additional weapons loaded on bombers", :class => "control-label" %>
+      <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip", :placeholder => "Limit to 400" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsPostStrike">?</button>
       <div class="modal fade" id="bombsPostStrike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
