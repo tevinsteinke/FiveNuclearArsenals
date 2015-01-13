@@ -26,8 +26,10 @@
   </div>
   <div class="row">
   <div class="col-md-6">
+    <h1>Defender force Arsenal Strategy</h1>
     <div class="form-fields-module">
-    <h2>Defender Force ICBMs</h2>
+    
+    <h2>Defender force ICBMs</h2>
     <div class="form-group">
       <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
       <%= f.number_field :icbmMax, :class => "form-control with-tooltip", :required => true%>
@@ -37,7 +39,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Maximum Number of ICBMs</h4>
+            <h4 class="modal-title" id="myModalLabel">Total Number of ICBMs</h4>
           </div>
           <div class="modal-body">
             <p><em>User Input</em></p>
@@ -72,16 +74,21 @@
       </div>
     </div>
   </div>
+  <div class="form-group">
+      <%= f.check_box :icbmBlueLaunch %>
+      <%= f.label :icbmBlueLaunch, "Defender launch under attack", :class => "control-label" %>
+      
+    </div>
     <div class="form-group">
       <%= f.label :icbmProb, "Probability of ICBM launch prior to attacker first strike", :class => "control-label" %>
-      <%= f.text_field :icbmProb, :class => "form-control with-tooltip", :required => true %>
+      <%= f.text_field :icbmProb, :class => "form-control with-tooltip" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmProb">?</button>
       <div class="modal fade" id="icbmProb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Probability of ICBM launch prior to attacker first strike</h4>
+              <h4 class="modal-title" id="myModalLabel">Probability of successful ICBM launch under attack</h4>
             </div>
             <div class="modal-body">
               <p><em>User Input</em></p>
@@ -119,20 +126,16 @@
         </div>
       </div>
     </div>-->
-    <div class="form-group">
-      <%= f.check_box :icbmBlueLaunch %>
-      <%= f.label :icbmBlueLaunch, "Defender launch under attack", :class => "control-label" %>
-      
-    </div>
+    
     <div class="form-group">
       <%= f.label :icbmBluePk, "Defender pk against attacker", :class => "control-label" %>
       <%= f.text_field :icbmBluePk, :class => "form-control" %>
     </div>
   </div>
   <div class="form-fields-module">
-    <h2>Defender force subs</h2>
+    <h2>Defender force SSBNs</h2>
     <div class="form-group">
-      <%= f.label :subsOperational, "Number of operational defender subs", :class => "control-label" %>
+      <%= f.label :subsOperational, "Number of operational SSBNs", :class => "control-label" %>
       <%= f.number_field :subsOperational, :class => "form-control with-tooltip", :required => true, :placeholder => "1 to 14" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsOperational">?</button>
       <div class="modal fade" id="subsOperational" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -154,7 +157,7 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :subsSeaRate, "\"At sea rate\" for defender subs", :class => "control-label" %>
+      <%= f.label :subsSeaRate, "\"At sea rate\" for SSBNs", :class => "control-label" %>
       <%= f.text_field :subsSeaRate, :class => "form-control with-tooltip", :required => true, :placeholder => ".5 to 1" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsSeaRate">?</button>
       <div class="modal fade" id="subsSeaRate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -268,7 +271,7 @@
       </div>
     </div>-->
     <div class="form-group">
-      <%= f.label :subsTubes, "Number of tubes per sub", :class => "control-label" %>
+      <%= f.label :subsTubes, "Number of tubes per SSBN", :class => "control-label" %>
       <%= f.number_field :subsTubes, :class => "form-control with-tooltip", :required => true, :placeholder => "12 to 24" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsTubes">?</button>
       <div class="modal fade" id="subsTubes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -336,7 +339,7 @@
     </div>-->
   </div>
   <div class="form-fields-module">
-    <h2>Defender Force Bombers</h2>
+    <h2>Defender force bombers</h2>
     <div class="form-group">
       <%= f.label :bombsNumber, "Number of bombers", :class => "control-label" %>
       <%= f.number_field :bombsNumber, :class => "form-control with-tooltip", :required => true %>
@@ -361,7 +364,7 @@
     </div>
     <div class="form-group">
       <%= f.check_box :bombsSurvive %>
-      <%= f.label :bombsSurvive, "Bombers generated and survive", :class => "control-label" %>
+      <%= f.label :bombsSurvive, "Generate and survive the bombers", :class => "control-label" %>
     </div>
     <div class="form-group">
       <%= f.label :bombsPostStrike, "Additional weapons loaded on bombers", :class => "control-label" %>
@@ -390,9 +393,9 @@
   <div class="col-md-6">
     
   <div class="form-fields-module">
-    <h2>Attacker Force</h2>
+    <h2>Attacker force <em>Targeting Strategy</em></h2>
     <div class="form-group">
-      <%= f.label :redRatio, "Attacker targeting ratio on defender ICBMs", :class => "control-label" %>
+      <%= f.label :redRatio, "Attacker targeting ratio on Defender ICBMs", :class => "control-label" %>
       <%= f.select:redRatio, Simulation::TARGETINGRATIOS, { :include_blank => 'Select a targeting ratio.' }, :class => "form-control with-tooltip", :required => true, :selected => params[:redRatio] %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redRatio">?</button>
       <div class="modal fade" id="redRatio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -400,7 +403,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Attacker targeting ratio on defender ICBMs</h4>
+              <h4 class="modal-title" id="myModalLabel">Attacker targeting ratio on Defender ICBMs</h4>
             </div>
             <div class="modal-body">
               <p><em>User input</em></p>
@@ -443,7 +446,7 @@
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :redBases, "Attacker weapons targeted on bases and crit assets", :class => "control-label" %>
+      <%= f.label :redBases, "Attacker weapons targeted on bases and critical assets", :class => "control-label" %>
       <%= f.number_field :redBases, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 100 (multiples of 5)" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redBlueIcbms">?</button>
       <div class="modal fade" id="redBlueIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
