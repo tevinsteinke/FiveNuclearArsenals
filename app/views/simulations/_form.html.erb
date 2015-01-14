@@ -79,7 +79,7 @@
       <%= f.label :icbmBlueLaunch, "Defender launch under attack", :class => "control-label" %>
       
     </div>
-    <div class="form-group">
+    <div class="form-group hide icbm-hide">
       <%= f.label :icbmProb, "Probability of ICBM launch prior to attacker first strike", :class => "control-label" %>
       <%= f.text_field :icbmProb, :class => "form-control with-tooltip" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmProb">?</button>
@@ -127,8 +127,8 @@
       </div>
     </div>-->
     
-    <div class="form-group">
-      <%= f.label :icbmBluePk, "Defender pk against attacker", :class => "control-label" %>
+    <div class="form-group hide icbm-hide">
+      <%= f.label :icbmBluePk, "Defender P<sub>k</sub> against attacker".html_safe, :class => "control-label" %>
       <%= f.text_field :icbmBluePk, :class => "form-control" %>
     </div>
   </div>
@@ -366,7 +366,7 @@
       <%= f.check_box :bombsSurvive %>
       <%= f.label :bombsSurvive, "Generate and survive the bombers", :class => "control-label" %>
     </div>
-    <div class="form-group">
+    <div class="form-group hide bombers-hide">
       <%= f.label :bombsPostStrike, "Additional weapons loaded on bombers", :class => "control-label" %>
       <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip", :placeholder => "Limit to 400" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsPostStrike">?</button>
@@ -424,7 +424,7 @@
       <%= f.label :redTarget, "Attacker target defender LCCs", :class => "control-label" %>
     </div>
     <div class="form-group">
-      <%= f.label :redPk, "Attacker pk against defender ICBMs", :class => "control-label" %>
+      <%= f.label :redPk, "Attacker P<sub>k</sub> against defender ICBMs".html_safe, :class => "control-label" %>
       <%= f.text_field :redPk, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1 (multiples of .05)" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redPk">?</button>
       <div class="modal fade" id="redPk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -536,3 +536,14 @@
   
 </div>
 <% end %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#simulation_icbmBlueLaunch').change(function() {
+    $('.icbm-hide').toggleClass("hide");
+  });
+
+  $('#simulation_bombsSurvive').change(function() {
+    $('.bombers-hide').toggleClass("hide");
+  });
+});
+</script>
