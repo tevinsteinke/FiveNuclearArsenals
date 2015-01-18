@@ -101,7 +101,7 @@ class Simulation < ActiveRecord::Base
 
   def calc_blue_surviving
     if self.icbmBlueLaunch
-      self.blueSurviving = self.icbmAvail
+      self.blueSurviving = self.subsAtSea * self.subsTubes * self.subsMirv
     else
       if self.redRatio == 0
         self.blueSurviving = self.icbmAvail + self.subsWeaps
