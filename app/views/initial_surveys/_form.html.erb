@@ -16,7 +16,36 @@
       <%= f.text_field :user, :class => "form-control", :required => true %>
     </div>
     <div class="form-group col-sm-12">
-      <%= f.label :timeSpent, "1. How often do you spend time on issues related to nuclear weapons?", :class => "control-label" %>
+      <%= f.label :age, "1. What is your age?", :class => "control-label" %>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "18 to 24 years" %>
+          <%= f.label :age, "18 to 24 years", :value => "18 to 24 years" %>
+        </div>
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "25 to 34 years" %>
+          <%= f.label :age, "25 to 34 years", :value => "25 to 34 years" %>
+        </div>
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "35 to 44 years" %>
+          <%= f.label :age, "35 to 44 years", :value => "35 to 44 years" %>
+        </div>
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "45 to 54 years" %>
+          <%= f.label :age, "45 to 54 years", :value => "45 to 54 years" %>
+        </div>
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "55 to 64 years" %>
+          <%= f.label :age, "55 to 64 years", :value => "55 to 64 years" %>
+        </div>
+        <div class="col-sm-12">
+          <%= f.radio_button :age, "65 or older" %>
+          <%= f.label :age, "65 or older", :value => "65 or older" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-12">
+      <%= f.label :timeSpent, "2. How often do you spend time on issues related to nuclear weapons?", :class => "control-label" %>
       <div class="row">
         <div class="col-sm-12 col-md-2">
           <%= f.radio_button :timeSpent, "Never" %>
@@ -37,7 +66,7 @@
       </div>
     </div>
   <div class="form-group col-sm-12">
-    <%= f.label :currentPosition, "2. Which of the following best describes your current position or employment?", :class => "control-label" %>
+    <%= f.label :currentPosition, "3. Which of the following best describes your current position or employment?", :class => "control-label" %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :currentPosition, "Federal Government" %> Federal Government
@@ -63,7 +92,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :positionAffiliation, "3. Which of the following best describes the national or international affiliation of your position or employment?", :class => "control-label" %>
+    <%= f.label :positionAffiliation, "4. Which of the following best describes the national or international affiliation of your position or employment?", :class => "control-label" %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :positionAffiliation, "United States" %> United States
@@ -83,7 +112,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :weaponsBenefit, "4. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %>
+    <%= f.label :weaponsBenefit, "5. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :weaponsBenefit, "1" %> Strongly Disagree
@@ -103,7 +132,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :superiorToRussia, "5. To maintain strategic stability, the U.S. nuclear arsenal does not have to be superior in number to Russia’s nuclear arsenal." %>
+    <%= f.label :superiorToRussia, "6. To maintain strategic stability, the U.S. nuclear arsenal does not have to be superior in number to Russia’s nuclear arsenal." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :superiorToRussia, "1" %> Strongly disagree
@@ -123,7 +152,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :equalToRussia, "6. To maintain strategic stability, the U.S. nuclear arsenal does not have to be equal in number to Russia’s nuclear arsenal." %>
+    <%= f.label :equalToRussia, "7. To maintain strategic stability, the U.S. nuclear arsenal does not have to be equal in number to Russia’s nuclear arsenal." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :equalToRussia, "1" %> Strongly disagree
@@ -143,7 +172,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :numberOfWeapons, "7. The number of nuclear weapons possessed by a potential adversary is irrelevant to determining the appropriate size of the U.S. nuclear arsenal." %>
+    <%= f.label :numberOfWeapons, "8. The number of nuclear weapons possessed by a potential adversary is irrelevant to determining the appropriate size of the U.S. nuclear arsenal." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :numberOfWeapons, "1" %> Strongly disagree
@@ -163,7 +192,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :ssbnSurvivability, "8. The submarine-launched ballistic missile fleet (SSBN) is the most survivable of U.S. nuclear forces.", :class => "control-label" %>
+    <%= f.label :ssbnSurvivability, "9. The submarine-launched ballistic missile fleet (SSBN) is the most survivable of U.S. nuclear forces.", :class => "control-label" %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :ssbnSurvivability, "1" %> Strongly disagree
@@ -183,7 +212,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :survivabilityImportance, "9. Survivability is the most important attribute for a nuclear weapons system." %>
+    <%= f.label :survivabilityImportance, "10. Survivability is the most important attribute for a nuclear weapons system." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :survivabilityImportance, "1" %> Strongly disagree
@@ -203,7 +232,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :ssbnValuable, "10. The submarine-launched ballistic missile fleet (SSBN) is the most valuable component of U.S. nuclear forces." %>
+    <%= f.label :ssbnValuable, "11. The submarine-launched ballistic missile fleet (SSBN) is the most valuable component of U.S. nuclear forces." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :ssbnValuable, "1" %> Strongly disagree
@@ -223,7 +252,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <%= f.label :icbmValuable, "11. The value of the land-based intercontinental ballistic missile (ICBM) force diminishes as arsenal size decreases." %>
+    <%= f.label :icbmValuable, "12. The value of the land-based intercontinental ballistic missile (ICBM) force diminishes as arsenal size decreases." %>
     <div class="row">
       <div class="col-sm-12">
         <%= f.radio_button :icbmValuable, "1" %> Strongly disagree
@@ -243,7 +272,7 @@
     </div>
   </div>
   <div class="form-group col-sm-12">
-    <p>12. In the five nuclear arsenals below, U.S. nuclear arsenal strategy should...</p>
+    <p>13. In the five nuclear arsenals below, U.S. nuclear arsenal strategy should...</p>
     <table class="table">
       <tr>
         <th></th>
