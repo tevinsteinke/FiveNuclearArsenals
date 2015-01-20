@@ -63,6 +63,9 @@ class Simulation < ActiveRecord::Base
   def calc_subs_mirv
     unless self.subsNavy.blank? || self.subsOperational.blank? || self.subsTubes.blank?
       self.subsMirv = (self.subsNavy.to_f / (self.subsOperational.to_f * self.subsTubes.to_f)).round(2)
+      if self.subsMirv > 8
+        self.subsMirv = 8
+      end
     end
   end
 
@@ -138,7 +141,7 @@ class Simulation < ActiveRecord::Base
 
   def calc_ratio_surviving
     unless self.redSurviving.blank? || self.blueSurviving.blank?
-      self.ratioSurviving = self.blueSurviving.to_f / self.redSurviving.to_f
+      self.ratioSurviving = (self.redSurviving.to_f / self.blueSurviving.to_f).round(1)
     end
   end
 end

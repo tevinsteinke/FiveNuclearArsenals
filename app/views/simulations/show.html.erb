@@ -11,6 +11,65 @@
   <p id="notice"><%= notice %></p>
   <div class="row">
     <div class="form-fields-module module-top">
+      <h2>Your <em>Arsenal Strategy</em> following attack</h2>
+      <div class="form-group col-md-6 col-lg-3">
+        Defender warheads remaining<br>
+        <strong><%= @simulation.blueSurviving %></strong>
+      </div>
+      <div class="form-group col-md-6 col-lg-3">
+        Attacker warheads remaining<br>
+        <strong><%= @simulation.redSurviving %></strong>
+      </div>
+      <div class="form-group col-md-6 col-lg-3">
+        Numerical Defender advantage<br>
+        <strong><%= @simulation.deltaSurviving %></strong>
+      </div>
+      <div class="form-group col-md-6 col-lg-3">
+        Ratio Defender:Attacker advantage<br>
+        <strong>1:<%= @simulation.ratioSurviving %></strong>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-fields-module">
+        <h2>Attacker warheads used in First Strike</h2>
+        <div class="form-group">
+          Attacker weapons targeted on defender ICBMs<br>
+          <strong><%= @simulation.redBlueIcbms %></strong>
+        </div>
+        <div class="form-group">
+          Total attacker weapons assigned first strike<br>
+          <strong><%= @simulation.redFirstStrike %></strong>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-fields-module">
+        <h2>Defender SSBN values</h2>
+        <div class="form-group">
+          Number of weapons assigned to navy<br>
+          <strong><%= @simulation.subsNavy %></strong>
+        </div>
+        <div class="form-group">
+          Number of subs at sea<br>
+          <strong><%= @simulation.subsAtSea %></strong>
+        </div>
+        <div class="form-group">
+          Warheads at sea<br>
+          <strong><%= @simulation.subsWeaps %></strong>
+        </div>
+        <div class="form-group">
+          SLBM MIRV ratio<br>
+          <strong><%= @simulation.subsMirv %></strong>
+        </div>
+        <div class="form-group">
+          Additional weapons available on generated bombers (blank if bombers were not generated)<br>
+          <strong><%= @simulation.subsPlusBombs %></strong>
+        </div>
+      </div>
+      <br><br>
+    </div>
+
+    <div class="form-fields-module module-top">
       <h2>Pre-Exchange Inventories</h2>
       <div class="form-group col-md-6">
         Blue force<br>
@@ -100,66 +159,33 @@
         <p><%= link_to 'Edit force structure', edit_simulation_path(@simulation), :class => "btn btn-primary" %></p>
         <p><%= link_to 'Recommend this force structure', simulation_add_comments_path(@simulation), :class => "btn btn-primary" %></p>
       </div>
-      <div class="form-fields-module results-module">
-        <h2>Results of your choices</h2>
+      <!--<div class="form-fields-module results-module">
+        <h2>Results of your choices</h2>-->
         <!--<div class="form-group">
           ICBMs available prior to attacker first strike<br>
           <strong><%#= @simulation.icbmAvail %></strong>
         </div>
         <hr> hide per hunter-->
-        <div class="form-group">
-          Attacker<br>
-          <strong><%= @simulation.redSurviving %></strong>
-        </div>
-        <div class="form-group">
-          Defender<br>
-          <strong><%= @simulation.blueSurviving %></strong>
-        </div>
-        <div class="form-group">
+        <!--<div class="form-group">
           Numerical Defender advantage<br>
-          <strong><%= @simulation.deltaSurviving %></strong>
+          <strong><%#= @simulation.deltaSurviving %></strong>
         </div>
         <div class="form-group">
           Ratio Defender:Attacker advantage<br>
-          <strong><%= @simulation.ratioSurviving %></strong>
-        </div>
-        <hr>
+          <strong>1:<%#= @simulation.ratioSurviving %></strong>
+        </div>-->
+
         <!--Defender ICBMs successful against attacker-->
-        <h3>Attacking force</h3>
-        <div class="form-group">
-          Attacker weapons targeted on defender ICBMs<br>
-          <strong><%= @simulation.redBlueIcbms %></strong>
-        </div>
-        <div class="form-group">
-          Total attacker weapons assigned first strike<br>
-          <strong><%= @simulation.redFirstStrike %></strong>
-        </div>
-        <hr>
-        <h3>SSBN values</h3>
-        <div class="form-group">
-          Number of weapons assigned to navy<br>
-          <strong><%= @simulation.subsNavy %></strong>
-        </div>
-        <div class="form-group">
-          Number of subs at sea<br>
-          <strong><%= @simulation.subsAtSea %></strong>
-        </div>
-        <div class="form-group">
-          Warheads at sea<br>
-          <strong><%= @simulation.subsWeaps %></strong>
-        </div>
-        <div class="form-group">
-          SLBM MIRV ratio<br>
-          <strong><%= @simulation.subsMirv %></strong>
-        </div>
+        
+    
         <!--<div class="form-group">
           Plus ICBMs<br>
-          <strong><%= @simulation.subsPlusIcbms %></strong>
-        </div>--hide per hunter-->
+          <strong><%#= @simulation.subsPlusIcbms %></strong>
+        </div>hide per hunter
         <div class="form-group">
-          Additional weapons on generated bombers (blank if they didn't put any)<br>
-          <strong><%= @simulation.subsPlusBombs %></strong>
-        </div>
+          Additional weapons available on generated bombers (blank if bombers were not generated)<br>
+          <strong><%#= @simulation.subsPlusBombs %></strong>
+        </div>-->
     
       </div>
     </div><!--/.col-lg-6-->
