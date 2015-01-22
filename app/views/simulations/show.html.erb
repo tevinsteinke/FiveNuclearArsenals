@@ -97,7 +97,10 @@
         </div>
         <div class="form-group">
           Defender launch under attack<br>
-          <strong><%= @simulation.icbmBlueLaunch %></strong>
+          <strong>
+            <% if @simulation.icbmBlueLaunch %>yes<% end %>
+            <% if !@simulation.icbmBlueLaunch %>no<% end %>
+          </strong>
         </div>
         <div class="form-group">
           Defender pk against attacker<br>
@@ -127,7 +130,10 @@
         </div>
         <div class="form-group">
           Bombers generated and survive<br>
-          <strong><%= @simulation.bombsSurvive %></strong>
+          <strong>
+            <% if @simulation.bombsSurvive %>yes<% end %>
+            <% if !@simulation.bombsSurvive %>no<% end %>
+          </strong>
         </div>
         <div class="form-group">
           Additional weapons loaded on bombers<br>
@@ -144,7 +150,10 @@
         </div>
         <div class="form-group">
           Attacker target defender LCCs<br>
-          <strong><%= @simulation.redTarget %></strong>
+          <strong>
+            <% if @simulation.redTarget %>yes<% end %>
+            <% if !@simulation.redTarget %>no<% end %>
+          </strong>
         </div>
         <div class="form-group">
           Attacker pk against defender ICBMs<br>
