@@ -66,7 +66,11 @@ class Simulation < ActiveRecord::Base
 
   def calc_subs_mirv
     unless self.subsNavy.blank? || self.subsOperational.blank? || self.subsTubes.blank?
-      self.subsMirv = (self.subsNavy.to_f / (self.subsOperational.to_f * self.subsTubes.to_f)).round(2)
+      if subsOperational == 0 || subsTubes == 0
+        self.subsMirv = 0
+      else
+        self.subsMirv = (self.subsNavy.to_f / (self.subsOperational.to_f * self.subsTubes.to_f)).round(2)
+      end
       if self.subsMirv > 8
         self.subsMirv = 8
       end
