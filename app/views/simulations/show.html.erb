@@ -61,22 +61,25 @@
           SLBM MIRV ratio<br>
           <strong><%= @simulation.subsMirv %></strong>
         </div>
-        <div class="form-group">
-          Additional weapons available on generated bombers (blank if bombers were not generated)<br>
-          <strong><%= @simulation.subsPlusBombs %></strong>
-        </div>
+        
       </div>
       <br><br>
     </div>
+    <!--<div class="form-fields-module module-top">
+      <div class="form-group">
+          Defender bombers<br>
+          <strong><%#= @simulation.subsPlusBombs %></strong>
+        </div>
+      </div>-->
 
     <div class="form-fields-module module-top">
       <h2>Pre-Exchange Inventories</h2>
       <div class="form-group col-md-6">
-        Blue force<br>
+        Defender force<br>
         <strong><%= @simulation.blueInventory %></strong>
       </div>
       <div class="form-group col-md-6">
-        Red force<br>
+        Attacker force<br>
         <strong><%= @simulation.redInventory %></strong>
       </div>
     </div>
@@ -84,16 +87,12 @@
       <div class="form-fields-module">
         <h2>Defender force ICBMs</h2>
         <div class="form-group">
-          Maximum Number of ICBMs<br>
+          Number of ICBMs<br>
           <strong><%= @simulation.icbmMax %></strong>
         </div>
         <div class="form-group">
           MIRV ratio on ICBMs<br>
           <strong><%= @simulation.icbmMirv %></strong>
-        </div>
-        <div class="form-group">
-          Probability of ICBM launch prior to attacker first strike<br>
-          <strong><%= @simulation.icbmProb %></strong>
         </div>
         <div class="form-group">
           Defender launch under attack<br>
@@ -103,7 +102,11 @@
           </strong>
         </div>
         <div class="form-group">
-          Defender pk against attacker<br>
+          Probability of ICBM launch prior to attacker first strike<br>
+          <strong><%= @simulation.icbmProb %></strong>
+        </div>
+        <div class="form-group">
+          Defender P<sub>k</sub> against Attacker<br>
           <strong><%= @simulation.icbmBluePk %></strong>
         </div>
       </div>

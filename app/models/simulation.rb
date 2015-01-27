@@ -115,8 +115,8 @@ class Simulation < ActiveRecord::Base
       self.blueSurviving = self.subsAtSea * self.subsTubes * self.subsMirv
     else
       if self.redRatio == 0
-        if self.icbmAvail
-          self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + self.icbmAvail
+        if self.icbmMax
+          self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + self.icbmMax
         else
           self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv)
         end
@@ -125,9 +125,10 @@ class Simulation < ActiveRecord::Base
           self.blueSurviving = self.subsAtSea * self.subsTubes * self.subsMirv
         else
           if self.icbmProb
-            self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + (self.icbmMax * (1 - (self.redPk*self.redRatio))) * self.icbmProb
+            #self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + (self.icbmMax * (1 - (self.redPk*self.redRatio))) * self.icbmProb
+            self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + ((self.icbmMax * self.icbmMirv) * (1 - self.redPk))
           else
-            self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) 
+            self.blueSurviving = (self.subsAtSea * self.subsTubes * self.subsMirv) + ((self.icbmMax * self.icbmMirv) * (1 - self.redPk))
           end
         end
       end
