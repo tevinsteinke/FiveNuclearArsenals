@@ -538,10 +538,33 @@
 <% end %>
 <script type="text/javascript">
 $(document).ready(function(){
+  // If it is checked, make sure that there is no hide class set.
+  if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+    $('.icbm-hide').removeClass("hide");
+  }
+
+  // If it isn't checked, make sure the hide class is set.
+  else {
+    $('.icbm-hide').addClass("hide");
+  }
+
+  // But regardless, swap it around when someone checks the box.
   $('#simulation_icbmBlueLaunch').change(function() {
+    
     $('.icbm-hide').toggleClass("hide");
   });
 
+  // If it is checked, make sure that there is no hide class set.
+  if ($('#simulation_bombsSurvive').is(':checked')) {
+    $('.icbm-hide').removeClass("hide");
+  }
+
+  // If it isn't checked, make sure the hide class is set.
+  else {
+    $('.icbm-hide').addClass("hide");
+  }
+
+  // But regardless, swap it around when someone checks the box.
   $('#simulation_bombsSurvive').change(function() {
     $('.bombers-hide').toggleClass("hide");
   });
