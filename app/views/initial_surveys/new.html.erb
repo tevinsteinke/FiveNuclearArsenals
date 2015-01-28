@@ -15,3 +15,46 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('input[type="checkbox"]').change(function() {
+      // When prioritize SSBN is changed
+      if ($(this).val() == "Prioritize SSBN over ICBM") { 
+        var clickedName = $(this).attr('name');
+        $('input[type="checkbox"]').each(function() {
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            // And if Prioritize ICBM is also checked
+            if ($(this).is(':checked') && $(this).val() == "Prioritize ICBM over SSBN") {
+              // Give them error
+              alert("Sorry! You cannot prioritize both ICBM and SSBN.");
+              // Uncheck it for them
+              $(this).attr('checked', false);
+            }
+          }
+        })
+      }
+
+      if ($(this).val() == "Prioritize ICBM over SSBN") { 
+        var clickedName = $(this).attr('name');
+        $('input[type="checkbox"]').each(function() {
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            // And if Prioritize ICBM is also checked
+            if ($(this).is(':checked') && $(this).val() == "Prioritize SSBN over ICBM") {
+              // Give them error
+              alert("Sorry! You cannot prioritize both ICBM and SSBN.");
+              // Uncheck it for them
+              $(this).attr('checked', false);
+            }
+          }
+        })
+      }
+        
+        
+      
+      //console.log($(this).val());
+      //console.log($(this).attr('name'));
+    });
+  });
+</script>
