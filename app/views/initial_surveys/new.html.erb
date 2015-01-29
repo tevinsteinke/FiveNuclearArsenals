@@ -32,9 +32,10 @@
               $(this).attr('checked', false);
             }
           }
-        })
+        });
       }
 
+      // When prioritze ICBM is changed
       if ($(this).val() == "Prioritize ICBM over SSBN") { 
         var clickedName = $(this).attr('name');
         $('input[type="checkbox"]').each(function() {
@@ -48,10 +49,74 @@
               $(this).attr('checked', false);
             }
           }
-        })
+        });
       }
-        
-        
+      
+      // When consist of a triad is selected
+      if ($(this).val() == "Consist of a triad (three delivery systems)") {
+        var clickedName = $(this).attr('name');
+        $('input[type="checkbox"]').each(function() {
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              // Check all three "retain options"
+              $(this).attr('checked', true);
+            }
+          }
+        });
+      }
+
+      // When consist of a dyad is selected
+      if ($(this).val() == "Consist of a dyad (two delivery systems)" 
+        && $(this).is(':checked')) {
+        var clickedName = $(this).attr('name');
+        var checkedRetain = 0;
+        $('input[type="checkbox"]').each(function() {
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              // Check all three "retain options"
+              if ($(this).is(':checked')) {
+                checkedRetain++;
+              }
+            }
+          }
+        });
+        if (checkedRetain == 3) {
+          $('input[type="checkbox"]').each(function() {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              $(this).attr('checked', false);
+            }
+          });
+          alert("Sorry! You can only select two \"retain\" options. Please reselect your choices.");
+        }
+      }
+
+      // When consist of a monad is selected
+      if ($(this).val() == "Consist of a monad (one delivery system)" 
+        && $(this).is(':checked')) {
+        var clickedName = $(this).attr('name');
+        var checkedRetain = 0;
+        $('input[type="checkbox"]').each(function() {
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              // Check all three "retain options"
+              if ($(this).is(':checked')) {
+                checkedRetain++;
+              }
+            }
+          }
+        });
+        if (checkedRetain >= 2) {
+          $('input[type="checkbox"]').each(function() {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              $(this).attr('checked', false);
+            }
+          });
+          alert("Sorry! You can only select one \"retain\" options. Please reselect your choice.");
+        }
+      }
       
       //console.log($(this).val());
       //console.log($(this).attr('name'));
