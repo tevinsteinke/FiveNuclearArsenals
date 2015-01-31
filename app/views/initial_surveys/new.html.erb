@@ -123,11 +123,16 @@
         && $(this).is(':checked')) {
         var clickedName = $(this).attr('name');
         var checkedDyad = false;
+        var checkedMonad = false;
         var checkedRetain = 0;
         $('input[type="checkbox"]').each(function() {
           // If dyad is checked
-          if ($(this).val() == "Consist of a dyad (two delivery systems)") {
+          if ($(this).val() == "Consist of a dyad (two delivery systems)" && $(this).is(':checked')) {
             checkedDyad = true;
+          }
+
+          if ($(this).val() == "Consist of a monad (one delivery system)" && $(this).is(':checked')) {
+            checkedMonad = true;
           }
           // If the checkboxes are in the same group
           if ($(this).attr('name') == clickedName) {
@@ -146,6 +151,15 @@
             }
           });
           alert("Sorry! You can only select two \"retain\" options. Please reselect your choices.");
+        }
+
+        if (checkedRetain >= 2 && checkedMonad) {
+          $('input[type="checkbox"]').each(function() {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              $(this).attr('checked', false);
+            }
+          });
+          alert("Sorry! You can only select one \"retain\" option. Please reselect your choices.");
         }
       }
       
