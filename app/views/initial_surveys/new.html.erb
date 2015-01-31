@@ -117,6 +117,37 @@
           alert("Sorry! You can only select one \"retain\" options. Please reselect your choice.");
         }
       }
+
+       // When retain SSBN is selected
+      if (($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers")
+        && $(this).is(':checked')) {
+        var clickedName = $(this).attr('name');
+        var checkedDyad = false;
+        var checkedRetain = 0;
+        $('input[type="checkbox"]').each(function() {
+          // If dyad is checked
+          if ($(this).val() == "Consist of a dyad (two delivery systems)") {
+            checkedDyad = true;
+          }
+          // If the checkboxes are in the same group
+          if ($(this).attr('name') == clickedName) {
+            if ($(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers" || $(this).val() == "Retain SSBN") {
+              // Check all three "retain options"
+              if ($(this).is(':checked')) {
+                checkedRetain++;
+              }
+            }
+          }
+        });
+        if (checkedRetain == 3 && checkedDyad) {
+          $('input[type="checkbox"]').each(function() {
+            if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+              $(this).attr('checked', false);
+            }
+          });
+          alert("Sorry! You can only select two \"retain\" options. Please reselect your choices.");
+        }
+      }
       
       //console.log($(this).val());
       //console.log($(this).attr('name'));
