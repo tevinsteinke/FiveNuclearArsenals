@@ -123,7 +123,7 @@
           }
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               // Check all three "retain options"
-              if ($(this).is(':checked')) {
+              if ($(this).is(':checked') && $(this).attr('name') == clickedName) {
                 checkedRetain++;
               }
             }
