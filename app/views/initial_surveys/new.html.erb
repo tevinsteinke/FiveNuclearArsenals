@@ -132,7 +132,9 @@
         if (checkedRetain >= 2) {
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
-              $(this).attr('checked', false);
+              if $(this).attr('name') == clickedName) {
+                $(this).attr('checked', false);
+              }
             }
           });
           alert("Sorry! You can only select one \"retain\" option. Please reselect your choice.");
@@ -168,7 +170,9 @@
         if (checkedRetain == 3 && checkedDyad) {
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
-              $(this).attr('checked', false);
+              if $(this).attr('name') == clickedName) {
+                $(this).attr('checked', false);
+              }
             }
           });
           alert("Sorry! You can only select two \"retain\" options. Please reselect your choices.");
@@ -177,7 +181,9 @@
         if (checkedRetain >= 2 && checkedMonad) {
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
-              $(this).attr('checked', false);
+              if $(this).attr('name') == clickedName) {
+                $(this).attr('checked', false);
+              }
             }
           });
           alert("Sorry! You can only select one \"retain\" option. Please reselect your choices.");
