@@ -33,7 +33,7 @@ class FollowUpSurveysController < ApplicationController
 
     respond_to do |format|
       if @follow_up_survey.save
-        format.html { redirect_to @follow_up_survey, notice: 'Follow up survey was successfully created.' }
+        format.html { redirect_to static_pages_thank_you_path, notice: 'Follow up survey was successfully created.' }
         format.json { render :show, status: :created, location: @follow_up_survey }
       else
         format.html { render :new }
