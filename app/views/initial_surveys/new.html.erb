@@ -150,11 +150,11 @@
         var checkedRetain = 0;
         $('input[type="checkbox"]').each(function() {
           // If dyad is checked
-          if ($(this).val() == "Consist of a dyad (two delivery systems)" && $(this).is(':checked')) {
+          if ($(this).val() == "Consist of a dyad (two delivery systems)" && $(this).is(':checked')  && $(this).attr('name') == clickedName) {
             checkedDyad = true;
           }
 
-          if ($(this).val() == "Consist of a monad (one delivery system)" && $(this).is(':checked')) {
+          if ($(this).val() == "Consist of a monad (one delivery system)" && $(this).is(':checked')  && $(this).attr('name') == clickedName) {
             checkedMonad = true;
           }
           // If the checkboxes are in the same group
