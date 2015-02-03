@@ -58,6 +58,13 @@
         $('input[type="checkbox"]').each(function() {
           // If the checkboxes are in the same group
           if ($(this).attr('name') == clickedName) {
+              if (($(this).val() == "Consist of a dyad (two delivery systems)"
+              && $(this).is(':checked')) ||
+              ($(this).val() == "Consist of a monad (one delivery systema)"
+              && $(this).is(':checked'))) {
+              $(this).attr('checked', false);
+              alert("Sorry! You can only suggest one delivery system.");
+            }
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               // Check all three "retain options"
               $(this).attr('checked', true);
@@ -74,6 +81,13 @@
         $('input[type="checkbox"]').each(function() {
           // If the checkboxes are in the same group
           if ($(this).attr('name') == clickedName) {
+            if (($(this).val() == "Consist of a monad (one delivery system)"
+              && $(this).is(':checked')) ||
+              ($(this).val() == "Consist of a triad (three delivery systems)"
+              && $(this).is(':checked'))) {
+              $(this).attr('checked', false);
+              alert("Sorry! You can only suggest one delivery system.");
+            }
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               // Check all three "retain options"
               if ($(this).is(':checked')) {
@@ -100,6 +114,13 @@
         $('input[type="checkbox"]').each(function() {
           // If the checkboxes are in the same group
           if ($(this).attr('name') == clickedName) {
+            if (($(this).val() == "Consist of a dyad (two delivery systems)"
+            && $(this).is(':checked')) ||
+            ($(this).val() == "Consist of a triad (three delivery systems)"
+            && $(this).is(':checked'))) {
+            $(this).attr('checked', false);
+            alert("Sorry! You can only suggest one delivery system.");
+          }
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               // Check all three "retain options"
               if ($(this).is(':checked')) {
@@ -114,7 +135,7 @@
               $(this).attr('checked', false);
             }
           });
-          alert("Sorry! You can only select one \"retain\" options. Please reselect your choice.");
+          alert("Sorry! You can only select one \"retain\" option. Please reselect your choice.");
         }
       }
 
