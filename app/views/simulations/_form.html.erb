@@ -156,7 +156,7 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group subs-hide">
       <%= f.label :subsSeaRate, "\"At sea rate\" for SSBNs", :class => "control-label" %>
       <%= f.text_field :subsSeaRate, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsSeaRate">?</button>
@@ -270,7 +270,7 @@
         </div>
       </div>
     </div>-->
-    <div class="form-group">
+    <div class="form-group subs-hide">
       <%= f.label :subsTubes, "Number of tubes per SSBN", :class => "control-label" %>
       <%= f.number_field :subsTubes, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 26" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsTubes">?</button>
@@ -567,6 +567,20 @@ $(document).ready(function(){
   // But regardless, swap it around when someone checks the box.
   $('#simulation_bombsSurvive').change(function() {
     $('.bombers-hide').toggleClass("hide");
+  });
+
+   // If number of operational subs is 0, hide the two below fields.
+  $('#simulation_subsOperational').change(function(){
+    if ($(this).val()==0) {
+      $('#simulation_subsSeaRate').val('0');
+      $('#simulation_subsTubes').val('0');
+      $('.subs-hide').addClass("hide");
+    }
+    else {
+      $('.subs-hide').removeClass("hide");
+      $('#simulation_subsSeaRate').val('');
+      $('#simulation_subsTubes').val('');
+    }
   });
 });
 </script>
