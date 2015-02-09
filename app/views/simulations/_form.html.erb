@@ -607,5 +607,25 @@ $(document).ready(function(){
     }
   });
 
+  // Prevent red inventory deficit spending.
+  // Ensure MIRV * maximum number of ICBM does not exceed blue preinventory
+  $('#simulation_redRatio').change(function(){
+    if ($('#simulation_redRatio').val() != "" && $('#simulation_icbmMax').val() != "" && $('#simulation_redBases').val() != "" && $('#simulation_redInventory').val() != "") {
+      console.log("pass");
+      if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+        if (($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + (.1 * $('#simulation_icbmMax').val()) + $('#simulation_redBases').val()) > $('#simulation_redInventory').val()) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+      else {
+        if (($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + $('#simulation_redBases').val()) > $('#simulation_redInventory').val()) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+    }
+  });
+
 });
 </script>
