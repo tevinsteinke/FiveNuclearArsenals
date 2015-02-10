@@ -29,7 +29,7 @@
               // Give them error
               alert("Sorry! You cannot prioritize both ICBM and SSBN.");
               // Uncheck it for them
-              $(this).attr('checked', false);
+              //$(this).attr('checked', false);
             }
           }
         });
@@ -46,7 +46,7 @@
               // Give them error
               alert("Sorry! You cannot prioritize both ICBM and SSBN.");
               // Uncheck it for them
-              $(this).attr('checked', false);
+              //$(this).attr('checked', false);
             }
           }
         });
@@ -85,7 +85,7 @@
               && $(this).is(':checked')) ||
               ($(this).val() == "Consist of a triad (three delivery systems)"
               && $(this).is(':checked'))) {
-              $(this).attr('checked', false);
+              //$(this).attr('checked', false);
               alert("Sorry! You can only suggest one delivery system.");
             }
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
@@ -99,7 +99,7 @@
         if (checkedRetain == 3) {
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
-              $(this).attr('checked', false);
+              //$(this).attr('checked', false);
             }
           });
           alert("Sorry! You can only select two \"retain\" options. Please reselect your choices.");
@@ -133,7 +133,7 @@
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               if ($(this).attr('name') == clickedName) {
-                $(this).attr('checked', false);
+                //$(this).attr('checked', false);
               }
             }
           });
@@ -171,7 +171,7 @@
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               if ($(this).attr('name') == clickedName) {
-                $(this).attr('checked', false);
+                //$(this).attr('checked', false);
               }
             }
           });
@@ -182,7 +182,7 @@
           $('input[type="checkbox"]').each(function() {
             if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
               if ($(this).attr('name') == clickedName) {
-                $(this).attr('checked', false);
+                //$(this).attr('checked', false);
               }
             }
           });
