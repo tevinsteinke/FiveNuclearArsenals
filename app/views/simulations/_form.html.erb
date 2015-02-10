@@ -612,17 +612,68 @@ $(document).ready(function(){
   //parseInt()
   $('#simulation_redRatio').change(function(){
     if ($('#simulation_redRatio').val() != "" && $('#simulation_icbmMax').val() != "" && $('#simulation_redBases').val() != "" && $('#simulation_redInventory').val() != "") {
-      console.log("pass");
-      console.log($('#simulation_redInventory').val());
-      console.log(($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + $('#simulation_redBases').val()));
       if ($('#simulation_icbmBlueLaunch').is(':checked')) {
-        if (($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + (.1 * $('#simulation_icbmMax').val()) + $('#simulation_redBases').val()) > $('#simulation_redInventory').val()) {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + (.1 * parseInt($('#simulation_icbmMax').val())) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
           $(this).val('');
           alert("Sorry! No attack deficit spending");
         }
       }
       else {
-        if (($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + $('#simulation_redBases').val()) > $('#simulation_redInventory').val()) {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+    }
+  });
+
+$('#simulation_icbmMax').change(function(){
+    if ($('#simulation_redRatio').val() != "" && $('#simulation_icbmMax').val() != "" && $('#simulation_redBases').val() != "" && $('#simulation_redInventory').val() != "") {
+      if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + (.1 * parseInt($('#simulation_icbmMax').val())) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+      else {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+    }
+  });
+
+$('#simulation_redInventory').change(function(){
+    if ($('#simulation_redRatio').val() != "" && $('#simulation_icbmMax').val() != "" && $('#simulation_redBases').val() != "" && $('#simulation_redInventory').val() != "") {
+      if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + (.1 * parseInt($('#simulation_icbmMax').val())) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+      else {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+    }
+  });
+
+$('#simulation_redBases').change(function(){
+    if ($('#simulation_redRatio').val() != "" && $('#simulation_icbmMax').val() != "" && $('#simulation_redBases').val() != "" && $('#simulation_redInventory').val() != "") {
+      console.log("pass");
+      console.log($('#simulation_redInventory').val());
+      console.log(($('#simulation_redRatio').val() * $('#simulation_icbmMax').val() + $('#simulation_redBases').val()));
+      if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + (.1 * parseInt($('#simulation_icbmMax').val())) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
+          $(this).val('');
+          alert("Sorry! No attack deficit spending");
+        }
+      }
+      else {
+        if ((parseInt($('#simulation_redRatio').val()) * parseInt($('#simulation_icbmMax').val()) + parseInt($('#simulation_redBases').val())) > parseInt($('#simulation_redInventory').val())) {
           $(this).val('');
           alert("Sorry! No attack deficit spending");
         }
