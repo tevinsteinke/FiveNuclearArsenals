@@ -585,25 +585,31 @@ $(document).ready(function(){
 
   // Ensure MIRV * maximum number of ICBM does not exceed blue preinventory
   $('#simulation_icbmMirv').change(function(){
-    if (($(this).val() * $('#simulation_icbmMax').val()) > $('#simulation_blueInventory').val()) {
-      $(this).val('');
-      alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+    if ($('#simulation_blueInventory').val != "" && $('#simulation_icbmMax').val != "") {
+      if (($(this).val() * $('#simulation_icbmMax').val()) > $('#simulation_blueInventory').val()) {
+        $(this).val('');
+        alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+      }
     }
   });
 
   // Ensure MIRV * maximum number of ICBM does not exceed blue preinventory
   $('#simulation_icbmMax').change(function(){
-    if (($(this).val() * $('#simulation_icbmMirv').val()) > $('#simulation_blueInventory').val()) {
-      $(this).val('');
-      alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+    if ($('#simulation_icbmMirv').val != "" && $('#simulation_blueInventory').val != "") {
+      if (($(this).val() * $('#simulation_icbmMirv').val()) > $('#simulation_blueInventory').val()) {
+        $(this).val('');
+        alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+      }
     }
   });
 
   // Ensure MIRV * maximum number of ICBM does not exceed blue preinventory
   $('#simulation_blueInventory').change(function(){
-    if (($('#simulation_icbmMax').val() * $('#simulation_icbmMirv').val()) > $(this).val()) {
-      $(this).val('');
-      alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+    if ($('#simulation_icbmMirv').val != "" && $('#simulation_icbmMax').val != "") {
+      if (($('#simulation_icbmMax').val() * $('#simulation_icbmMirv').val()) > $(this).val()) {
+        $(this).val('');
+        alert("Sorry! MIRV ratio times maximum number of ICBMs should not exceed blue preinventory.")
+      }
     }
   });
 
