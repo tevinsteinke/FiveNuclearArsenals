@@ -13,7 +13,7 @@ class Simulation < ActiveRecord::Base
   before_save :calc_delta_surviving
   before_save :calc_ratio_surviving
 
-  MIRVRATIOS = [[1, 1], [2, 2], [3, 3]]
+  MIRVRATIOS = [[1, 1.0], [2, 2.0], [3, 3.0]]
   TARGETINGRATIOS = [["0:1", 0], ["1:1", 1], ["2:1", 2]]
 
   def self.to_csv(simulations)
