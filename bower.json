@@ -10,9 +10,9 @@
 // }
 
 {
-  "name": "",
-  "version": "",
-  "main": "",
+  "name": "Five Nuclear Arsenals",
+  "version": "1.0.0",
+  "main": "assets/stylesheet/application.css",
   "private": true,
   "dependencies": {
     "sweetalert"
