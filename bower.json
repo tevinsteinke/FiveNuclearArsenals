@@ -4,6 +4,6 @@
   "main": "assets/stylesheet/application.css",
   "private": true,
   "dependencies": {
-    "sweetalert": "https://github.com/t4t5/sweetalert"
+    "sweetalert": "~0.4.2"
   }
 }
