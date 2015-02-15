@@ -56,10 +56,13 @@ class Simulation < ActiveRecord::Base
 
   def calc_subs_navy
     unless self.icbmMax.blank? || self.blueInventory.blank? || self.bombsNumber.blank?
-      if self.icbmMirv.blank?
-        self.subsNavy = self.blueInventory - self.icbmMax - self.bombsPostStrike
+      if self.bombsPostStrike.blank? 
+        self.bombsPostStrike = 0
+      end
+      if self.icbmMirv
+        self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - self.bombsPostStrike
       else
-        self.subsNavy = self.blueInventory -(self.icbmMax * self.icbmMirv) - self.bombsPostStrike
+        self.subsNavy = self.blueInventory - self.icbmMax - self.bombsPostStrike
       end
     end
   end
