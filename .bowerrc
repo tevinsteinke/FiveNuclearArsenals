@@ -1,4 +1,3 @@
 {
-  "directory"  : "bower_components",
-  "cwd"        : "bower_components"
+  "directory": "vendor/assets/components"
 }

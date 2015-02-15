@@ -1,20 +1,9 @@
-// Define your dependencies below, here's an example:
-
-// {
-//   "name": "myProject",
-//   "version": "1.0.0",
-//   "main": "./path/to/main.css",
-//   "dependencies": {
-//     "jquery": "~1.7.2"
-//   }
-// }
-
 {
   "name": "Five Nuclear Arsenals",
   "version": "1.0.0",
   "main": "assets/stylesheet/application.css",
   "private": true,
   "dependencies": {
-    "sweetalert"
+    "sweetalert": "https://github.com/t4t5/sweetalert"
   }
 }
