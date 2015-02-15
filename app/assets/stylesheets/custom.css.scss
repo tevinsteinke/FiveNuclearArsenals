@@ -14,7 +14,7 @@ $WET-ASPHAULT: #34495e;
 }
 
 * {
-  font-family: Arimo, Helvetica, Arial, sans-serif;
+  font-family: "Arimo", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -107,16 +107,17 @@ p {
 .form-control.with-tooltip {
   width: 88%;
   display: inline-block;
-  + .has-tooltip {
-    margin-left: .8em;
-    padding: .3em .7em;
-    display: inline-block;
-    font-weight: bold;
-    color: #fff;
-    background-color: #444;
-    border: none;
-    @include border-radius(1.5em);
-  }
+}
+
+.has-tooltip {
+  margin-left: .8em;
+  padding: .3em .7em;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+  border: none;
+  @include border-radius(1.5em);
 }
 
 .actions > .btn {

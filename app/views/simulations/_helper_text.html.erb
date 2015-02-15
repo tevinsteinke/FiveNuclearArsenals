@@ -1,0 +1,269 @@
+<%# Modal for TOTAL NUMBER OF ICBMS %>
+<div class="modal fade" id="icbmMax" tabindex="-1" role="dialog" aria-labelledby="totalICBMsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="totalICBMsLabel">Total Number of Defender ICBMs</h4>
+      </div>
+      <div class="modal-body">
+        <!--<p><em>User Input</em></p>-->
+        <p>Select the total number of ICBMs on alert - <em>Launch-Ready</em></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# Modal for MIRV RATIO ON ICBMS %>
+<div class="modal fade" id="icbmMirv" tabindex="-1" role="dialog" aria-labelledby="mirvRatioLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="mirvRatioLabel">MIRV Ratio of ICBMs</h4>
+      </div>
+      <div class="modal-body">
+        <p>Select the Multiple Independently-targeted Reentry Vehicle Ratio for ICBMs (i.e., how many warheads on each ICBM)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# Modal for MIRV RATIO ON ICBMS %>
+<div class="modal fade" id="icbmBlueLaunch" tabindex="-1" role="dialog" aria-labelledby="icbmLaunchLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="icbmLaunchLabel">Defender ICBM Launch Under Attack</h4>
+      </div>
+      <div class="modal-body">
+        <p>Select to launch ICBMs before Attacker weapons impact Defender targets</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for PROBABILITY OF ICBM LAUNCH %>
+<div class="modal fade" id="icbmProb" tabindex="-1" role="dialog" aria-labelledby="icbmProbLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="icbmProbLabel">Probability of successful Defender ICBM launch under attack</h4>
+      </div>
+      <div class="modal-body">
+        <p>Select the percentage of alert ICBMs that will actually launch when directed (e.g., enter ".5" to indicate 50% of the ICBMs will successfully launch before being destroyed by the incoming attack)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# Modal for DEFENDER ICBM PK AGAINST ATTACKER %>
+<div class="modal fade" id="icbmProb" tabindex="-1" role="dialog" aria-labelledby="icbmProbLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="icbmProbLabel">Defender ICBM P<sub>k</sub> against attacker</h4>
+      </div>
+      <div class="modal-body">
+        <p>Targeting effectiveness for Defender ICBMs against Attacker warheads (i.e., counter-force attack on nuclear forces). Example: If Defender selects ".5" the Attacker arsenal remaining will be decremented by 50% of the total Defender ICBM x probability of successful ICBM launch under attack.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for NUMBER OF OPERATIONAL DEFENDER SUBS %>
+<div class="modal fade" id="subsOperational" tabindex="-1" role="dialog" aria-labelledby="subsOperationalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="subsOperationalLabel">Number of operational Defender SSBN</h4>
+      </div>
+      <div class="modal-body">
+        <p>Select the number of Defender Ballistic Submarines (SSBN) available for duty (i.e., not in dry-dock). This number includes SSBN in port and at sea. The current U.S. inventory of Ohio class SSBNs is 14, of which 2 are normally always in dry-dock/refit. Therefore the current real world value for this variable is 12.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for "AT SEA RATE" FOR DEFENDER SSBN %>
+<div class="modal fade" id="subsSeaRate" tabindex="-1" role="dialog" aria-labelledby="subsSeaRateLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="subsSeaRateLabel">"At sea rate" for Defender SSBN</h4>
+      </div>
+      <div class="modal-body">
+        <p>The percentage of "Operational Defender Subs" that are at sea at any one time. At sea rates have varied over time. A typical contemporary at sea rate in the public domain is ".6"</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for NUMBER OF TUBES PER DEFENDER SSBN %>
+<div class="modal fade" id="subsTubes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Number of tubes per Defender SSBN</h4>
+      </div>
+      <div class="modal-body">
+        <p>Select the number of missile launch tubes available on a single ballistic sub; current value is 24.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for NUMBER OF DEFENDER BOMBERS %>
+<div class="modal fade" id="bombsNumber" tabindex="-1" role="dialog" aria-labelledby="bombsNumberLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="bombsNumberLabel">Number of Defender Bombers</h4>
+      </div>
+      <div class="modal-body">
+        <p>The total number of Defender nuclear capable bombers.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for NUMBER OF BOMBS POST STRIKE %>
+<div class="modal fade" id="bombsPostStrike" tabindex="-1" role="dialog" aria-labelledby="bombsPostStrikeLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="bombsPostStrikeLabel">Warheads Assigned to Defender Bombers</h4>
+      </div>
+      <div class="modal-body">
+        <p>Assigns selected number of warheads from Defender Total Warheads</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for ATTACKER TARGETING RATIO ON DEFENDER ICBMs %>
+<div class="modal fade" id="redRatio" tabindex="-1" role="dialog" aria-labelledby="redRatioLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="redRatioLabel">Attacker targeting ratio on Defender ICBMs</h4>
+      </div>
+      <div class="modal-body">
+        <p><em>User input</em></p>
+        <p>This determines how many Attacker weapons will be launched against Defender ICBM Launch Facilities (i.e., missile silos)</p>
+        <p>0:1 means zero Attacker warheads are used to target Defender ICBMs directly</p>
+        <p>1:1 means one Attacker warhead is used to attack each Defender ICBM directly</p>
+        <p>2:1 means two Attacker are used to attack each Defender ICBM directly</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# Modal for ATTACKER TARGET DEFENDER LCCS %>
+<div class="modal fade" id="redRatio" tabindex="-1" role="dialog" aria-labelledby="redRatioLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="redRatioLabel">Attacker target Defender LCCs</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enabling this function allocates one Attacker warhead to each Defender ICBM Launch Control Facilities (automatically calculated as 10% of total Defender ICBM).</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for ATTACKER PK ON DEFENDER ICBMs %>
+<div class="modal fade" id="redPk" tabindex="-1" role="dialog" aria-labelledby="redPkLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="redPkLabel">Attacker P<sub>k</sub> against defender ICBMs</h4>
+      </div>
+      <div class="modal-body">
+        <p>Effectiveness of attack on Defender ICBMs, if "Attacker Targeting Ratio on Defender ICBMs" is set to either 1:1 or 2:1, the program will allocate either one or two Attacker warheads against each Defender ICBM (e.g., set to ".5" the total number of Defender ICBMs will be decremented by half.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Modal for ATTACKER WEAPONS TARGETED ON DEFENDER ICBMS %>
+<div class="modal fade" id="redBlueIcbms" tabindex="-1" role="dialog" aria-labelledby="redBlueICBMsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="redBlueICBMsLabel">Attacker weapons targeted on bases and critical assets</h4>
+      </div>
+      <div class="modal-body">
+        <p>Number of Attacker warheads used to target assets other than Defender ICBM (i.e., Bomber bases, SSBN ports, command and control, nuclear storage facilities) – Do not include targeting of LCCs in this number; that is calculated automatically if selected.</p>
+
+        <p>Example:<br>
+        Sub Bases | 2 x 5 = 10<br>
+        Bomber Bases | 3 x 2 = 6<br>
+        ICBM Bases | 3 x 2 = 6<br>
+        C2 Nodes | 5 x 2 = 10<br>
+        Nuke Facilities | 6 x 3 = 18<br>
+        ----------------|------------<br>
+        Total | 50</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

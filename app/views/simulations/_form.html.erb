@@ -34,102 +34,30 @@
       <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
       <%= f.number_field :icbmMax, :class => "form-control with-tooltip", :required => true %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmMax">?</button>
-      <div class="modal fade" id="icbmMax" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Total Number of ICBMs</h4>
-          </div>
-          <div class="modal-body">
-            <p><em>User Input</em></p>
-            <p>Select the total number of ICBMs on alert. These are missiles with warheads on ready status and does not include those in maintenance status. Under New START, this is the number of ICBMs counted as "Strategic Deliveray Vehicles."</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
     </div>
-    </div>
+
     <div class="form-group">
       <%= f.label :icbmMirv, "MIRV ratio on ICBMs", :class => "control-label" %>
       <%= f.select:icbmMirv, Simulation::MIRVRATIOS, { :include_blank => 'Select a MIRV ratio.' }, :class => "form-control with-tooltip", :required => true, :selected => params[:icbmMirv] %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmMirv">?</button>
-      <div class="modal fade" id="icbmMirv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">MIRV Ratio of ICBMs</h4>
-          </div>
-          <div class="modal-body">
-            <p><em>User Input</em></p>
-            <p>Select the MIRV Ratio for ICBMs. If not standard, enter an average ICBM MIRV Ratio obtained from dividing total ICBM Warheads by the number of ICBMs (Warheads / ICBMs).</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="form-group">
+
+    <div class="form-group">
       <%= f.check_box :icbmBlueLaunch %>
       <%= f.label :icbmBlueLaunch, "Defender launch under attack", :class => "control-label" %>
-      
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmBlueLaunch">?</button>
     </div>
+
     <div class="form-group hide icbm-hide">
       <%= f.label :icbmProb, "Probability of ICBM launch prior to attacker first strike", :class => "control-label" %>
       <%= f.text_field :icbmProb, :class => "form-control with-tooltip", :placeholder => "0.0 to 1.0" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmProb">?</button>
-      <div class="modal fade" id="icbmProb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Probability of successful ICBM launch under attack</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User Input</em></p>
-              <p>This is the estimated percentage of alert ICBMs that will actually launch when the keys are turned.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!--<div class="form-group">
-      <%#= f.label :icbmAvail, "ICBMs available prior to attacker first strike", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmAvail">?</button>
-      <div class="modal fade" id="icbmAvail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">ICBMs Available Prior to Red 1st Strike</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-
-              <p>This is the "Maximum Number of ICBMs" multiplied by the "Probability of ICBM Launch Prior to Red 1st Strike" multiplied by the "MIRV Ratio of ICBMs" with the product rounded to the nearest whole number.</p>
-
-              <p>Round (ICBMs * Probibility of Launch * MIRV Ratio)</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    
+   
     <div class="form-group hide icbm-hide">
       <%= f.label :icbmBluePk, "Defender P<sub>k</sub> against attacker".html_safe, :class => "control-label" %>
-      <%= f.text_field :icbmBluePk, :class => "form-control", :placeholder => "0.0 to 1.0" %>
+      <%= f.text_field :icbmBluePk, :class => "form-control with-tooltip", :placeholder => "0.0 to 1.0" %>
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmBluePk">?</button>
     </div>
   </div>
   <div class="form-fields-module">
@@ -138,205 +66,17 @@
       <%= f.label :subsOperational, "Number of operational SSBNs", :class => "control-label" %>
       <%= f.number_field :subsOperational, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 14" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsOperational">?</button>
-      <div class="modal fade" id="subsOperational" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of operational defender subs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Select the number of Defender Ballistic Submarines not in dry-dock. This number represents those subs in home port and at sea. The current U.S. inventory of Ohio class SSBNs is 14, of which 2 are normally always in dry-dock/refit. Therefore the current real world value for this variable is 12.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="form-group subs-hide">
       <%= f.label :subsSeaRate, "\"At sea rate\" for SSBNs", :class => "control-label" %>
       <%= f.text_field :subsSeaRate, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsSeaRate">?</button>
-      <div class="modal fade" id="subsSeaRate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">"At sea rate" for defender subs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>This is the average percentage of "Operational Defender Subs" that are at sea at any one time. The navy claims an "At Sea Rate of Defender Subs" of .66, though the actual historical average is closer to .5.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!--<div class="form-group">
-      <%#= f.label :subsAtSea, "Number of subs at sea", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsAtSea">?</button>
-      <div class="modal fade" id="subsAtSea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of subs at sea</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>This is the "Number of Operational Defender Subs" multiplied by the "At Sea Rate."</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.check_box :subsRoundUp %>
-      <%#= f.label :subsRoundUp, "Round up to nearest whole sub", :class => "control-label" %>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.label :subsWeaps, "Weapons at sea", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsWeaps">?</button>
-      <div class="modal fade" id="subsWeaps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Weapons at sea</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>Represents the number of warheads that are survived at sea during the exchange. The calculation is "SLBM MIRV Ratio" times "Number of Tubes Per Sub" times "Number of Subs at Sea."</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.label :subsPlusIcbms, "Plus ICBMs", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsPlusIcbms">?</button>
-      <div class="modal fade" id="subsPlusIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Plus ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>This is "Weaps at Sea" plus "ICBMs Available Prior to Attacker 1st Strike."</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.label :subsPlusBombs, "Plus bombs", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsPlusBombs">?</button>
-      <div class="modal fade" id="subsPlusBombs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Plus ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>This is "Plus ICBMs" plus "Number of Bombers" or bomber weapons depending on whether "Count Weapons Versus Bomber Post-Strike?"" is selected.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
     <div class="form-group subs-hide">
       <%= f.label :subsTubes, "Number of tubes per SSBN", :class => "control-label" %>
       <%= f.number_field :subsTubes, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 26" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsTubes">?</button>
-      <div class="modal fade" id="subsTubes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of tubes per sub</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Select the number of launch tubes available on a single ballistic sub. Current value is 24. Value may change to 20 under New Start.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!--<div class="form-group">
-      <%#= f.label :subsMirv, "SLBM MIRV ratio", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsMirv">?</button>
-      <div class="modal fade" id="subsMirv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">SLBM MIRV ratio</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>The "Number of Weapons Assigned to the Navy" divided by the product of "Number of Operational Blue Subs" and "Number of Tubes Per Sub." The number will highlight red if the max D-5 MIRV capability of 8 is exceeded.</p>
-              <p>(Navy Weapons / (Operational Subs * Tubes Per Sub))</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.label :subsNavy, "Number of weapons assigned to navy", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsNavy">?</button>
-      <div class="modal fade" id="subsNavy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of weapons assigned to navy</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>Calculated value</em></p>
-              <p>Value is derived by subtracting total number of weapons assinged to ICBMs and Bombers from the "Max Teaty Weapons" Input box at the top of the page. New START value of 1550 is used as a default.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
   </div>
   <div class="form-fields-module">
     <h2>Defender force bombers</h2>
@@ -344,23 +84,6 @@
       <%= f.label :bombsNumber, "Number of bombers", :class => "control-label" %>
       <%= f.number_field :bombsNumber, :class => "form-control with-tooltip", :required => true %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsNumber">?</button>
-      <div class="modal fade" id="bombsNumber" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of bombers</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>The total number of Blue nuclear capable bombers (DCA B-52s and B-2s).</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="form-group">
       <%= f.check_box :bombsSurvive %>
@@ -370,23 +93,6 @@
       <%= f.label :bombsPostStrike, "Additional weapons loaded on bombers", :class => "control-label" %>
       <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip", :placeholder => "Limit to 400" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsPostStrike">?</button>
-      <div class="modal fade" id="bombsPostStrike" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Number of bombers</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>This option is only enabled if "Bombers Generated and Survive?" is checked. Checking "Count Weapons Versus Bombers Post-Strike" enables the weapons text box (directly to the right) and forces the program to add the selected number of weapons -- not the selected number of bombers -- to the Defender Post-Strike weapons inventory. If left unchecked, the program will only add the selected number of bombers to the Blue Post-Strike inventory. New START math considers bombers as "Strategic Delivery Vehicles" and counts each bomber as a single weapon. Checking this box allows the user to see an accurate representation of the actual Defender Post-Strike weapons inventory versus a number based on treaty math.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   </div><!--/.col-md-6-->
@@ -398,117 +104,22 @@
       <%= f.label :redRatio, "Attacker targeting ratio on Defender ICBMs", :class => "control-label" %>
       <%= f.select:redRatio, Simulation::TARGETINGRATIOS, { :include_blank => 'Select a targeting ratio.' }, :class => "form-control with-tooltip", :required => true, :selected => params[:redRatio] %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redRatio">?</button>
-      <div class="modal fade" id="redRatio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Attacker targeting ratio on Defender ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Attacker's targeting ratio against Defender ICBMs. Select 0:1, 1:1 or 2:1. This selection determines how many attacker weapons will be launched against Defender ICBMs. Does not include Defender LCCs which are targeted on a standard 1:1 ratio.</p>
-              <p>0:1 means no Attacker weapons are targeted against Defender ICBMs<br>
-              1:1 means 1 Attacker weapon will be targeted against each Defender ICBM<br>
-              2:1 means Attacker will double-tap each Defender ICBM</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="form-group">
       <%= f.check_box :redTarget %>
       <%= f.label :redTarget, "Attacker target defender LCCs", :class => "control-label" %>
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redTarget">?</button>
     </div>
     <div class="form-group">
       <%= f.label :redPk, "Attacker P<sub>k</sub> against defender ICBMs".html_safe, :class => "control-label" %>
       <%= f.text_field :redPk, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1 (multiples of .05)" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redPk">?</button>
-      <div class="modal fade" id="redPk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Attacker pk against defender ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Targeting effectiveness for Attacker ICBMs against Defender ICBMs. If "Attacker Targeting Ratio on Defender ICBMs" is set to either 1:1 or 2:1, the program will allocate either 1 or 2 Attacker ICBMs against each Defender ICBM. With a "Attacker Pk Against Defender ICBMs" set to 50%, the total number of Defender ICBMs will be decremented by half. With "Attacker Targeting Ratio on Defender ICBMs" set to 0, the "Attacker Pk Against Defender ICBMs" is irrelevant since no Attacker ICBMs will be launched against Defender ICBMs.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="form-group">
       <%= f.label :redBases, "Attacker weapons targeted on bases and critical assets", :class => "control-label" %>
       <%= f.number_field :redBases, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 100 (multiples of 5)" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redBlueIcbms">?</button>
-      <div class="modal fade" id="redBlueIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Attacker weapons targeted on defender ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Number of Attacker Weapons assigned against Blue Bomber Bases, Sub Bases, C2 Nodes, Nuclear Facilities, etc. Default value is 50 and is composed of the following targets and allocations:</p>
-              <p>Sub Bases | 2 x 5 = 10<br>
-              Bomber Bases | 3 x 2 = 6<br>
-              ICBM Bases | 3 x 2 = 6<br>
-              C2 Nodes | 5 x 2 = 10<br>
-              Nuke Facilities | 6 x 3 = 18<br>
-              ----------------|------------<br>
-              Total | 50</p>
-              <p>Note: Use "Target LCCs?" Check Box to target Launch Control Centers. Do not include in this variable.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!--<div class="form-group">
-      <%#= f.label :redBlueIcbms, "Attacker weapons targeted on defender ICBMs", :class => "control-label" %>
-      <input type="text" class="form-control with-tooltip derived-value" disabled>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#redBlueIcbms">?</button>
-      <div class="modal fade" id="redBlueIcbms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Attacker weapons targeted on defender ICBMs</h4>
-            </div>
-            <div class="modal-body">
-              <p><em>User input</em></p>
-              <p>Number of Attacker Weapons assigned against Blue Bomber Bases, Sub Bases, C2 Nodes, Nuclear Facilities, etc. Default value is 50 and is composed of the following targets and allocations:</p>
-              <p>Sub Bases | 2 x 5 = 10<br>
-              Bomber Bases | 3 x 2 = 6<br>
-              ICBM Bases | 3 x 2 = 6<br>
-              C2 Nodes | 5 x 2 = 10<br>
-              Nuke Facilities | 6 x 3 = 18<br>
-              ----------------|------------<br>
-              Total | 50</p>
-              <p>Note: Use "Target LCCs?" Check Box to target Launch Control Centers. Do not include in this variable.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!--<div class="form-group">
-      <%#= f.label :redFirstStrike, "Attacker weapons assigned first strike", :class => "control-label" %>
-      <input type="text" class="form-control derived-value" disabled>
-    </div>-->
   </div>
   <!--<div class="form-fields-module">
     <h2>Surviving weapons</h2>
