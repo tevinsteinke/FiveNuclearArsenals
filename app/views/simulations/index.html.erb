@@ -35,6 +35,9 @@
       <th>Ratiosurviving</th>
       <th>User</th>
       <th>Comments</th>
+      <th>Recommend Comments</th>
+      <th>Vulnerable Comments</th>
+      <th>Unexpected Comments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -74,6 +77,9 @@
         <td><%= simulation.ratioSurviving %></td>
         <td><%= simulation.user %></td>
         <td><%= simulation.comments %></td>
+        <td><%= simulation.recommendComments %></td>
+        <td><%= simulation.vulnerableComments %></td>
+        <td><%= simulation.unexpectedComments %></td>
         <td><%= link_to 'Show', simulation %></td>
         <td><%= link_to 'Edit', edit_simulation_path(simulation) %></td>
         <td><%= link_to 'Destroy', simulation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
