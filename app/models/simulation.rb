@@ -40,10 +40,13 @@ class Simulation < ActiveRecord::Base
 
   def calc_subs_plus_bombs
     unless self.subsPlusIcbms.blank?
+      if self.bombsPercentage.blank?
+        self.bombsPercentage = 1
+      end
       if self.bombsPostStrike.blank? || self.bombsPostStrike == 0
         self.subsPlusBombs = self.subsPlusIcbms + self.bombsNumber
       else
-        self.subsPlusBombs = self.subsPlusIcbms + self.bombsPostStrike
+        self.subsPlusBombs = self.subsPlusIcbms + (self.bombsPostStrike * self.bombsPercentage)
       end
     end
   end
@@ -59,10 +62,13 @@ class Simulation < ActiveRecord::Base
       if self.bombsPostStrike.blank? 
         self.bombsPostStrike = 0
       end
+      if self.bombsPercentage.blank?
+        self.bombsPercentage = 1
+      end
       if self.icbmMirv
-        self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - self.bombsPostStrike
+        self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - (self.bombsPostStrike * self.bombsPercentage)
       else
-        self.subsNavy = self.blueInventory - self.icbmMax - self.bombsPostStrike
+        self.subsNavy = self.blueInventory - self.icbmMax - (self.bombsPostStrike * self.bombsPercentage)
       end
     end
   end
@@ -137,8 +143,11 @@ class Simulation < ActiveRecord::Base
       end
     end
     if self.bombsSurvive
+      if self.bombsPercentage.blank?
+        self.bombsPercentage = 1
+      end
       if self.bombsPostStrike
-        self.blueSurviving += self.bombsPostStrike
+        self.blueSurviving += (self.bombsPostStrike * self.bombsPercentage)
       else
         self.blueSurviving += self.bombsNumber
       end

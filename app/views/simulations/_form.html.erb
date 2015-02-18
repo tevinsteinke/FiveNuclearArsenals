@@ -94,6 +94,10 @@
       <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip", :placeholder => "Limit to 400" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsPostStrike">?</button>
     </div>
+    <div class="form-group hide bombers-hide">
+      <%= f.label :bombsPercentage, "Percentage of Defender bombers that are generated and survive attack", :class => "control-label" %>
+      <%= f.number_field :bombsPercentage, :class => "form-control", :placeholder => "0.1 to 1.0" %>
+    </div>
   </div>
   </div><!--/.col-md-6-->
   <div class="col-md-6">
