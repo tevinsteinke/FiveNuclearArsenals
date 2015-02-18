@@ -115,6 +115,7 @@ class SimulationsController < ApplicationController
         :bombsNumber, 
         :bombsSurvive, 
         :bombsPostStrike, 
+        :bombsPercentage,
         :redRatio, 
         :redTarget, 
         :redPk,

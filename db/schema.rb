@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218214203) do
+ActiveRecord::Schema.define(version: 20150218215404) do
 
   create_table "follow_up_surveys", force: true do |t|
     t.string   "weaponsBenefit"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20150218214203) do
     t.text     "recommendComments"
     t.text     "unexpectedComments"
     t.text     "vulnerableComments"
+    t.float    "bombsPercentage"
   end
 
 end
