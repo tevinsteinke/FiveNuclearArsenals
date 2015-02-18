@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211233614) do
+ActiveRecord::Schema.define(version: 20150218214203) do
 
   create_table "follow_up_surveys", force: true do |t|
     t.string   "weaponsBenefit"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150211233614) do
     t.integer  "subsPlusIcbms"
     t.integer  "subsPlusBombs"
     t.integer  "subsTubes"
-    t.decimal  "subsMirv",                    precision: 10, scale: 2
+    t.decimal  "subsMirv",                       precision: 10, scale: 2
     t.integer  "subsNavy"
     t.integer  "bombsNumber"
     t.boolean  "bombsSurvive"
@@ -90,8 +90,11 @@ ActiveRecord::Schema.define(version: 20150211233614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "subsSeaRate"
-    t.text     "comments",        limit: 255
+    t.text     "comments",           limit: 255
     t.string   "user"
+    t.text     "recommendComments"
+    t.text     "unexpectedComments"
+    t.text     "vulnerableComments"
   end
 
 end

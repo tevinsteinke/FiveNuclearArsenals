@@ -28,6 +28,9 @@ class SimulationsController < ApplicationController
   def add_comments
     @simulation = Simulation.find(params[:simulation_id])
     @simulation.comments = (params[:comments])
+    @simulation.recommendComments = (params[:recommendComments])
+    @simulation.unexpectedComments = (params[:unexpectedComments])
+    @simulation.vulnerableComments = (params[:vulnerableComments])
 
     @simulation.save
   end
@@ -124,6 +127,9 @@ class SimulationsController < ApplicationController
         :ratioSurviving, 
         :subsSeaRate, 
         :user, 
+        :recommendComments,
+        :unexpectedComments,
+        :vulnerableComments,
         :comments
       )
     end
