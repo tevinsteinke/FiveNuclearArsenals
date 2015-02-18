@@ -12,10 +12,6 @@
   <% end %>
 <div class="row">
   <div class="form-group col-sm-12">
-    <%= f.label :comments, "Please enter final comments.", :class => "user-label" %>
-    <%= f.text_area :comments, :class => "form-control", :required => "true" %>
-  </div>
-  <div class="form-group col-sm-12">
     <%= f.label :weaponsBenefit, "1. There is a number of nuclear weapons sufficient to deter adversaries, regardless of the number of nuclear weapons they possess. Beyond that number, additional weapons provide little or no marginal benefit.", :class => "control-label" %>
     <div class="row">
       <div class="col-sm-12">
@@ -179,6 +175,10 @@
   <div class="form-group col-sm-12">
     <p>12. In the five nuclear arsenals below, U.S. nuclear arsenal strategy should...</p>
     <%= render "/shared/survey_final", :f => f %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :comments, "Please enter final comments.", :class => "user-label" %>
+    <%= f.text_area :comments, :class => "form-control", :required => "true" %>
   </div>
   <div class="actions">
     <%= f.submit "Submit", :class => "btn btn-primary" %>
