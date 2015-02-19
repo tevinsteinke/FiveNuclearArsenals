@@ -86,7 +86,8 @@ p {
   &.module-top {
     overflow: auto;
     margin-bottom: 2em;
-    background-color: $CLOUDS;
+    background-color: darken($CLOUDS, 3%);
+    font-size: 120%;
   }
 }
 
