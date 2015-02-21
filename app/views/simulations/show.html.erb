@@ -21,11 +21,11 @@
         <strong><%= @simulation.redSurviving %></strong>
       </div>
       <div class="form-group col-md-6 col-lg-3">
-        Numerical Defender advantage<br>
+        Defender advantage<br>
         <strong><%= @simulation.deltaSurviving %></strong>
       </div>
       <div class="form-group col-md-6 col-lg-3">
-        Ratio Defender:Attacker advantage<br>
+        Ratio Defender:Attacker<br>
         <strong>1:<% if @simulation.ratioSurviving == Float::INFINITY %>0<% else %><%= @simulation.ratioSurviving %><% end %></strong>
       </div>
     </div>
@@ -43,26 +43,26 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="form-fields-module">
+      <!--<div class="form-fields-module">
         <h2>Defender SSBN values</h2>
         <div class="form-group">
           Number of weapons assigned to navy<br>
-          <strong><%= @simulation.subsNavy %></strong>
+          <strong><%#= @simulation.subsNavy %></strong>
         </div>
         <div class="form-group">
           Number of subs at sea<br>
-          <strong><%= @simulation.subsAtSea %></strong>
+          <strong><%#= @simulation.subsAtSea %></strong>
         </div>
         <div class="form-group">
           Warheads at sea<br>
-          <strong><%= @simulation.subsWeaps %></strong>
+          <strong><%#= @simulation.subsWeaps %></strong>
         </div>
         <div class="form-group">
           SLBM MIRV ratio<br>
-          <strong><%= @simulation.subsMirv %></strong>
+          <strong><%#= @simulation.subsMirv %></strong>
         </div>
         
-      </div>
+      </div>-->
       <br><br>
     </div>
     <!--<div class="form-fields-module module-top">
@@ -71,7 +71,7 @@
           <strong><%#= @simulation.subsPlusBombs %></strong>
         </div>
       </div>-->
-
+      <h1>Assessed Inputs</h1>
     <div class="form-fields-module module-top">
       <h2>Total Warheads</h2>
       <div class="form-group col-md-6">

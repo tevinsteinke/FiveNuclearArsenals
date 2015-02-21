@@ -31,7 +31,7 @@
     
     <h2>Defender force ICBMs</h2>
     <div class="form-group">
-      <%= f.label :icbmMax, "Maximum Number of ICBMs", :class => "control-label" %>
+      <%= f.label :icbmMax, "Number of Defender ICBMs", :class => "control-label" %>
       <%= f.number_field :icbmMax, :class => "form-control with-tooltip", :required => true %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#icbmMax">?</button>
     </div>
@@ -91,7 +91,7 @@
     </div>
     <div class="form-group hide bombers-hide">
       <%= f.label :bombsPostStrike, "Warheads loaded on bombers", :class => "control-label" %>
-      <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip", :placeholder => "Limit to 400" %>
+      <%= f.number_field :bombsPostStrike, :class => "form-control with-tooltip" %>
       <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#bombsPostStrike">?</button>
     </div>
     <div class="form-group hide bombers-hide">
