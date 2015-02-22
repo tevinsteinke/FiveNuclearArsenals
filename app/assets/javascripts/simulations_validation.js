@@ -205,12 +205,12 @@ $('#simulation_redBases').change(function(){
     if ($('#simulation_blueInventory').val() != "" && $('#simulation_icbmMax').val() != "" 
       && $('#simulation_bombsPostStrike').val() != "") {
       
-      if ($("#simulation_bombsPercentage").val() == "") {
+      //if ($("#simulation_bombsPercentage").val() == "") {
         var bombsPercentage = 1;
-      }
-      else {
+      //}
+      //else {
         var bombsPercentage = parseInt($("#simulation_bombsPercentage").val());
-      }
+      //}
       if ($("#simulation_icbmMirv").val() == "") {
         var icbmMirv = 1;
       }
