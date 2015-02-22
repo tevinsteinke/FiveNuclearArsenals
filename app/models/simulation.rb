@@ -66,9 +66,9 @@ class Simulation < ActiveRecord::Base
         self.bombsPercentage = 1
       end
       if self.icbmMirv
-        self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - (self.bombsPostStrike * self.bombsPercentage)
+        self.subsNavy = self.blueInventory - (self.icbmMax * self.icbmMirv) - (self.bombsPostStrike)
       else
-        self.subsNavy = self.blueInventory - self.icbmMax - (self.bombsPostStrike * self.bombsPercentage)
+        self.subsNavy = self.blueInventory - self.icbmMax - (self.bombsPostStrike)
       end
     end
   end
