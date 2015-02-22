@@ -61,24 +61,6 @@
     </div>
   </div>
   <div class="form-fields-module">
-    <h2>Defender force SSBNs</h2>
-    <div class="form-group">
-      <%= f.label :subsOperational, "Number of operational SSBNs", :class => "control-label" %>
-      <%= f.number_field :subsOperational, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 14" %>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsOperational">?</button>
-    </div>
-    <div class="form-group subs-hide">
-      <%= f.label :subsSeaRate, "\"At sea rate\" for SSBNs", :class => "control-label" %>
-      <%= f.text_field :subsSeaRate, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1" %>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsSeaRate">?</button>
-    </div>
-    <div class="form-group subs-hide">
-      <%= f.label :subsTubes, "Number of tubes per SSBN", :class => "control-label" %>
-      <%= f.number_field :subsTubes, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 26" %>
-      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsTubes">?</button>
-    </div>
-  </div>
-  <div class="form-fields-module">
     <h2>Defender force bombers</h2>
     <div class="form-group">
       <%= f.label :bombsNumber, "Number of bombers", :class => "control-label" %>
@@ -99,6 +81,25 @@
       <%= f.number_field :bombsPercentage, :class => "form-control", :placeholder => "0.1 to 1.0" %>
     </div>
   </div>
+  <div class="form-fields-module">
+    <h2>Defender force SSBNs</h2>
+    <div class="form-group">
+      <%= f.label :subsOperational, "Number of operational SSBNs", :class => "control-label" %>
+      <%= f.number_field :subsOperational, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 14" %>
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsOperational">?</button>
+    </div>
+    <div class="form-group subs-hide">
+      <%= f.label :subsSeaRate, "\"At sea rate\" for SSBNs", :class => "control-label" %>
+      <%= f.text_field :subsSeaRate, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 1" %>
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsSeaRate">?</button>
+    </div>
+    <div class="form-group subs-hide">
+      <%= f.label :subsTubes, "Number of tubes per SSBN", :class => "control-label" %>
+      <%= f.number_field :subsTubes, :class => "form-control with-tooltip", :required => true, :placeholder => "0 to 26" %>
+      <button type="button" class="has-tooltip" data-toggle="modal" data-toggle="modal" data-target="#subsTubes">?</button>
+    </div>
+  </div>
+  
   </div><!--/.col-md-6-->
   <div class="col-md-6">
     
