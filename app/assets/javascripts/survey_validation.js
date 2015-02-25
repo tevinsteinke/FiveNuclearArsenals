@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+  /*$('input[type="submit"]').click(function(e) {
+    $('input[type="checkbox"]').each(function() {
+      if ($(this).val() == "Prioritize SSBN over ICBM") && $(this) {
+        e.preventDefault();
+        swal({
+          title: "Sorry!",
+          text: "Please select a priority (SSBN or ICBM).",
+          timer: 4000,
+          type: "error"
+        });
+      }
+    }
+  })*/
   // Whenever a checkbox is changed, do the following...
   $('input[type="checkbox"]').change(function() {
 
