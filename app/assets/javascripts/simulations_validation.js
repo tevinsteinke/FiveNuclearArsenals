@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+  if ($('#simulation_icbmBlueLaunch').is(':checked')) {
+    $('.icbm-hide').removeClass("hide");
+  }
+  else {
+    $('.icbm-hide').addClass("hide");
+  }
+
   // But regardless, swap it around when someone checks the box.
   $('#simulation_icbmBlueLaunch').change(function() {
     if ($(this).is(':checked')) {
@@ -11,6 +18,14 @@ $(document).ready(function(){
   });
 
   // But regardless, swap it around when someone checks the box.
+
+  if ($("#simulation_bombsSurvive").is(':checked')) {
+    $('.bombers-hide').removeClass("hide");
+  }
+  else {
+    $('.bombers-hide').addClass("hide");
+  }
+
   $('#simulation_bombsSurvive').change(function() {
     if ($(this).is(':checked')) {
       $('.bombers-hide').removeClass("hide");
