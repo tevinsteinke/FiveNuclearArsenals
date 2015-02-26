@@ -1,18 +1,45 @@
 $(document).ready(function() {
 
-  /*$('input[type="submit"]').click(function(e) {
-    $('input[type="checkbox"]').each(function() {
-      if ($(this).val() == "Prioritize SSBN over ICBM") && $(this) {
-        e.preventDefault();
-        swal({
-          title: "Sorry!",
-          text: "Please select a priority (SSBN or ICBM).",
-          timer: 4000,
-          type: "error"
+  $('input[type="submit"]').click(function(e) {
+    ($('input[type="checkbox"]')).each(function() {
+      if (!$(this).is(':checked') && $(this).val() == "Prioritize SSBN over ICBM") {
+        var name = $(this).attr('name');
+        $('input[type="checkbox"]').each(function() {
+          if ($(this).attr('name') == name && $(this).val() == "Prioritize ICBM over SSBN" 
+            && !$(this).is(':checked')) {
+            e.preventDefault();
+            var friendlyName = "";
+            switch (name) {
+              case "initial_survey[groupOneSuggestions][]":
+                friendlyName = "2200/2200";
+                break;
+              case "initial_survey[groupTwoSuggestions][]":
+                friendlyName = "1550/1550";
+                break;
+              case "initial_survey[groupThreeSuggestions][]":
+                friendlyName = "1000/1000";
+                break;
+              case "initial_survey[groupFourSuggestions][]":
+                friendlyName = "500/500";
+                break;
+              case "initial_survey[groupFiveSuggestions][]":
+                friendlyName = "300/300";
+                break;
+              default:
+                friendlyName = "";
+            }
+            swal({
+              title: "Sorry!",
+              text: "Please select a priority (SSBN or ICBM) for " + friendlyName + ".",
+              timer: 4000,
+              type: "error"
+            });
+          }
         });
       }
-    }
-  })*/
+    });
+  });
+
   // Whenever a checkbox is changed, do the following...
   $('input[type="checkbox"]').change(function() {
 
