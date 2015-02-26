@@ -85,6 +85,75 @@ $(document).ready(function() {
           }
         });
       }
+
+      /*
+      ** Verify appropriate number of retain options is checked.
+      */
+      else {
+        var name = $(this).attr('name');
+        var checkedRetain = 0;
+        $('input[type="checkbox"]').each(function() {
+        // If the checkboxes are in the same group
+        if ($(this).attr('name') == name) {
+          // Count the number of checked delivery systems.
+          if ($(this).val() == "Retain SSBN" || $(this).val() == "Retain ICBM" || $(this).val() == "Retain bombers") {
+            if ($(this).is(':checked')) {
+              checkedRetain++;
+            }
+          }
+        }
+      });
+        var friendlyName = "";
+        switch (name) {
+          case "initial_survey[groupOneSuggestions][]":
+            friendlyName = "2200/2200";
+            break;
+          case "initial_survey[groupTwoSuggestions][]":
+            friendlyName = "1550/1550";
+            break;
+          case "initial_survey[groupThreeSuggestions][]":
+            friendlyName = "1000/1000";
+            break;
+          case "initial_survey[groupFourSuggestions][]":
+            friendlyName = "500/500";
+            break;
+          case "initial_survey[groupFiveSuggestions][]":
+            friendlyName = "300/300";
+            break;
+          default:
+            friendlyName = "";
+        }
+        if ($(this).is(':checked') && $(this).val() == "Consist of a triad (three delivery systems)") {
+          if (checkedRetain != 3) {
+            swal({
+              title: "Sorry!",
+              text: "Please select 3 options if you want to consist of a triad for  " + friendlyName + ".",
+              timer: 8000,
+              type: "error"
+            });
+          }
+        }
+        else if ($(this).is(':checked') && $(this).val() == "Consist of a dyad (two delivery systems)") {
+          if (checkedRetain != 2) {
+            swal({
+              title: "Sorry!",
+              text: "Please select 2 options if you want to consist of a dyad for  " + friendlyName + ".",
+              timer: 8000,
+              type: "error"
+            });
+          }
+        }
+        else if ($(this).is(':checked') && $(this).val() == "Consist of a monad (one delivery system)") {
+          if (checkedRetain != 1) {
+            swal({
+              title: "Sorry!",
+              text: "Please select 1 option if you want to consist of a monad for  " + friendlyName + ".",
+              timer: 8000,
+              type: "error"
+            });
+          }
+        }
+      }
     });
   });
 
