@@ -46,10 +46,6 @@
       <div class="form-fields-module">
         <h2>Defender SSBN values</h2>
         <div class="form-group">
-          Number of weapons assigned to navy<br>
-          <strong><%= @simulation.subsNavy %></strong>
-        </div>
-        <div class="form-group">
           Number of subs at sea<br>
           <strong><%= @simulation.subsAtSea %></strong>
         </div>
@@ -130,7 +126,7 @@
         </div>
       </div>
       <div class="form-fields-module">
-        <h2>Defender force subs</h2>
+        <h2>Defender force SSBN</h2>
         <div class="form-group">
           Number of operational Defender subs<br>
           <strong><%= @simulation.subsOperational %></strong>
@@ -142,6 +138,10 @@
         <div class="form-group">
           Number of tubes per sub<br>
           <strong><%= @simulation.subsTubes %></strong>
+        </div>
+        <div class="form-group">
+          Number of weapons assigned to navy<br>
+          <strong><%= @simulation.subsNavy %></strong>
         </div>
       </div>
     </div><!--/.col-md-6-->
