@@ -31,6 +31,36 @@
     </div>
     <div class="col-md-6">
       <div class="form-fields-module">
+        <h2>Defender surviving warheads</h2>
+        <div class="form-group">
+          ICBM Surviving<br>
+          <strong>
+            <% if @simulation.redPk == 0 %>
+              <%= @simulation.icbmMax * @simulation.icbmMirv %>
+              <!-- 90 should be 10 -->
+            <% else %>
+              <%=  @simulation.icbmMax * @simulation.icbmMirv * (1 - @simulation.redPk) %>
+            <% end %>
+          </strong>
+        </div>
+        <div class="form-group">
+          Warheads surviving on bombers<br>
+          <strong><%= @simulation.bombsNumber * @simulation.bombsPercentage %></strong>
+        </div>
+        <div class="form-group">
+          SSBN<br>
+          <strong><%= @simulation.subsNavy * @simulation.subsSeaRate %></strong>
+        </div>
+        <!--<div class="form-group">
+          SLBM MIRV ratio<br>
+          <strong><%#= @simulation.subsMirv %></strong>
+        </div>-->
+        
+      </div>
+      <br><br>
+    </div>
+    <div class="col-md-6">
+      <div class="form-fields-module">
         <h2>Attacker warheads used in First Strike</h2>
         <div class="form-group">
           Attacker weapons targeted on Defender ICBMs<br>
@@ -42,25 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="form-fields-module">
-        <h2>Defender SSBN values</h2>
-        <div class="form-group">
-          Number of subs at sea<br>
-          <strong><%= @simulation.subsAtSea %></strong>
-        </div>
-        <!--<div class="form-group">
-          Warheads at sea<br>
-          <strong><%#= @simulation.subsWeaps %></strong>
-        </div>
-        <div class="form-group">
-          SLBM MIRV ratio<br>
-          <strong><%#= @simulation.subsMirv %></strong>
-        </div>-->
-        
-      </div>
-      <br><br>
-    </div>
+    
   </div>
     <!--<div class="form-fields-module module-top">
       <div class="form-group">
@@ -123,6 +135,10 @@
         <div class="form-group">
           Additional weapons loaded on bombers<br>
           <strong><%= @simulation.bombsPostStrike %></strong>
+        </div>
+        <div class="form-group">
+          Rate of Defender bombers that are generated and survive attack<br>
+          <strong><%= @simulation.bombsPercentage %></strong>
         </div>
       </div>
       <div class="form-fields-module">
