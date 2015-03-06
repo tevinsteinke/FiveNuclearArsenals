@@ -169,3 +169,35 @@ label.user-label {
   font-weight: bold;
   color: #c0392b;
 }
+
+// Matrices, for final survey questions
+//======================================
+
+table.matrix {
+  th:nth-child(even),
+  td:nth-child(even) {
+    background-color: lighten($CLOUDS, 3%);
+  }
+}
+
+.matrix-tag {
+  margin-bottom: .4em;
+  font-size: .95em;
+  text-align: right;
+  color: darken($CLOUDS, 70%);
+} //.matrix-tag
+
+.matrix-bucket {
+  h3 {
+    padding: .4em .6em;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: $WHITE;
+    background-color: $WET-ASPHAULT;
+  }
+  + .matrix-bucket {
+    margin-top: 3.4em;
+  }
+}
