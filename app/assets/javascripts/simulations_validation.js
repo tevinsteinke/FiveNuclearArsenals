@@ -246,6 +246,20 @@ $('#simulation_redBases').change(function(){
       }
       
     }
+
+    if ($('#simulation_blueInventory').val() != "" && $('#simulation_icbmMax').val() != "" 
+      && $('#simulation_bombsPostStrike').val() != "") {
+      if ((parseInt($('#simulation_icbmMax').val()) + parseInt($('#simulation_bombsPostStrike').val())) > parseInt($('#simulation_blueInventory').val())) {
+        $(this).val('');
+        swal({
+            title: "Sorry!",
+            text: "No navy subs deficit spending.",
+            timer: 4000,
+            type: "error"
+          });
+      }
+    }
+
   });
 
 });
