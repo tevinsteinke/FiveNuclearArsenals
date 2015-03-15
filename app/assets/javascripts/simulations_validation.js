@@ -24,6 +24,7 @@ $(document).ready(function(){
   }
   else {
     $('.bombers-hide').addClass("hide");
+    $('.bombers-hide > input').val('');
   }
 
   $('#simulation_bombsSurvive').change(function() {
@@ -32,6 +33,7 @@ $(document).ready(function(){
     }
     else {
       $('.bombers-hide').addClass("hide");
+      $('.bombers-hide > input').val('');
     }
   });
 
