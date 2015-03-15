@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218215404) do
+ActiveRecord::Schema.define(version: 20150315120413) do
 
   create_table "follow_up_surveys", force: true do |t|
     t.string   "weaponsBenefit"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150218215404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user"
-    t.string   "comments"
+    t.text     "comments"
   end
 
   create_table "initial_surveys", force: true do |t|
