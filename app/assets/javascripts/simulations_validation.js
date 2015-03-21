@@ -262,6 +262,25 @@ $('#simulation_redBases').change(function(){
       }
     }
 
+    if (parseInt($('#simulation_subsSeaRate').val()) > 1 || parseInt($('#simulation_subsSeaRate').val()) < 0) {
+      $('#simulation_subsSeaRate').val('');
+      swal({
+            title: "Sorry!",
+            text: "Please enter a value between 0 and 1.",
+            timer: 4000,
+            type: "error"
+          });
+    }
+
+    if (parseInt($('#simulation_redPk').val()) > 1 || parseInt($('#simulation_redPk').val()) < 0) {
+      $('#simulation_redPk').val('');
+      swal({
+            title: "Sorry!",
+            text: "Please enter a value between 0 and 1.",
+            timer: 4000,
+            type: "error"
+          });
+    }
   });
 
 });
