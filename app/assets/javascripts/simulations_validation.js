@@ -281,6 +281,16 @@ $('#simulation_redBases').change(function(){
             type: "error"
           });
     }
+
+    if (parseInt($('#simulation_bombsPercentage').val()) > 1 || parseInt($('#simulation_bombsPercentage').val()) < 0) {
+      $('#simulation_bombsPercentage').val('');
+      swal({
+            title: "Sorry!",
+            text: "Please enter a value between 0 and 1.",
+            timer: 4000,
+            type: "error"
+          });
+    }
   });
 
 });
